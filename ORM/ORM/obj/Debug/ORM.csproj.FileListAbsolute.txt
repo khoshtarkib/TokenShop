@@ -8,3 +8,8 @@ E:\old\Projects\TokenShop\ORM\ORM\bin\Debug\ORM.pdb
 E:\old\Projects\TokenShop\ORM\ORM\obj\Debug\ORM.dll
 E:\old\Projects\TokenShop\ORM\ORM\obj\Debug\ORM.pdb
 E:\old\Projects\TokenShop\ORM\ORM\obj\Debug\ORM.csprojResolveAssemblyReference.cache
+F:\tk\ORM\ORM\bin\Debug\ORM.dll
+F:\tk\ORM\ORM\bin\Debug\ORM.pdb
+F:\tk\ORM\ORM\obj\Debug\ORM.csprojResolveAssemblyReference.cache
+F:\tk\ORM\ORM\obj\Debug\ORM.dll
+F:\tk\ORM\ORM\obj\Debug\ORM.pdb
