@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "~/Areas/admin/Views/Shared/_layout.cshtml";
+}
+
+<div class="stockprice-feed-project-area user-prfile-activity-area">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                @{Html.RenderAction("DashboardNewCustomers");}
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                @{Html.RenderAction("DashboardNewTickets");}
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                @{Html.RenderAction("DashboardNewPayRequest");}
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                @{Html.RenderAction("DashboardNewBuyRequest");}
+            </div>
+        </div>
+    </div>
+</div>

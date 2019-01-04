@@ -1,0 +1,240 @@
+﻿@{
+    Layout = "~/Areas/admin/Views/Shared/_layout.cshtml";
+}
+@using (Html.BeginForm("Create", "Users", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="multi-uploaded-area inbox-mailbox-area mg-b-15">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="project-details-wrap shadow-reset">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="project-details-title">
+                                            <h2><span class="profile-details-name-nn">اطلاعات</span> کاربر جدید</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>نام:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="firstName" value="" name="firstName" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>نام خانوادگی:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="lastName" value="" name="lastName" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>نام کاربری:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="userName" value="" name="userName" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>کلمه عبور:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="password" id="password" value="" name="password" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>آدرس:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="address" value="" name="address" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>ایمیل:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="email" value="" name="email" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>تلفن:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="phone" value="" name="phone" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>موبایل:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="mobilePhone" value="" name="mobilePhone" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>وضعیت:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+
+                                                        <select name="state" class="form-control">
+                                                            @if (Model.State == 1)
+                                                            {
+                                                                <option value="1" selected>فعال</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option value="1">فعال</option>
+                                                            }
+                                                            @if (Model.State == 2)
+                                                            {
+                                                                <option value="2" selected>غیرفعال</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option value="2">غیرفعال</option>
+                                                            }
+                                                        </select>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>دسترسی ها:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-10 col-md-10 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="checkbox" value="[cart]" name="cart">
+                                                        <span style="margin-left: 10px;">حساب/کارتهای بانکی مشتریان</span>
+
+                                                        <input type="checkbox" value="[concatus]" name="concatus">
+                                                        <span style="margin-left: 10px;">درخواستهای تماس</span>
+
+                                                        <input type="checkbox" value="[customers]" name="customers">
+                                                        <span style="margin-left: 10px;">مشتریان</span>
+
+                                                        <input type="checkbox" value="[news]" name="news">
+                                                        <span style="margin-left: 10px;">اخبار</span>
+
+                                                        <input type="checkbox" value="[faq]" name="faq">
+                                                        <span style="margin-left: 10px;">سوالات متداول</span>
+
+                                                        <input type="checkbox" value="[slider]" name="slider">
+                                                        <span style="margin-left: 10px;">اسلایدر</span>
+
+                                                        <input type="checkbox" value="[ticket]" name="ticket">
+                                                        <span style="margin-left: 10px;">تیکتهای پشتیبانی</span>
+
+                                                        <input type="checkbox" value="[order]" name="order">
+                                                        <span style="margin-left: 10px;">درخواستهای خرید</span>
+
+                                                        <input type="checkbox" value="[payrequest]" name="payrequest">
+                                                        <span style="margin-left: 10px;">درخواست های واریز</span>
+
+                                                        <input type="checkbox" value="[receipt]" name="receipt">
+                                                        <span style="margin-left: 10px;">فیشهای بانکی</span>
+
+                                                        <input type="checkbox" value="[transactions]" name="transactions">
+                                                        <span style="margin-left: 10px;">تراکنش های بانکی</span>
+
+                                                        <input type="checkbox" value="[users]" name="users">
+                                                        <span style="margin-left: 10px;">کاربران سیستم</span>
+
+                                                        <input type="checkbox" value="[settings]" name="settings">
+                                                        <span style="margin-left: 10px;">تنظیمات</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <button type="submit" class="btn btn-success">ذخیره</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+ }

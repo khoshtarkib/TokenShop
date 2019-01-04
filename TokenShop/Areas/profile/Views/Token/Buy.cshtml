@@ -1,0 +1,215 @@
+﻿
+@{
+    Layout = "~/Areas/profile/Views/Shared/_layout.cshtml";
+}
+<script>
+function isNumberKey(evt)
+{
+          var charCode = (evt.which) ? evt.which : event.keyCode;
+          if (charCode != 46 && charCode > 31
+            && (charCode < 48 || charCode > 57))
+             return false;
+
+          return true;
+}
+$(document).ready(function () {
+
+    $('.persian-date').persianDatepicker({
+        observer: false,
+        calendarType: 'persian',
+        format: 'YYYY/MM/DD',
+        autoClose: true
+    });
+});
+</script>
+<div class="login-form-area mg-t-30 mg-b-15 fade in animated zoomInDown">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            @using(Html.BeginForm("Buy","Token",FormMethod.Post, new { enctype = "multipart/form-data", id="adminpro-register-form",@class="adminpro-form" }))
+            { 
+                <input type="hidden" name="step" value="@ViewBag.step" />
+                <div class="col-lg-6">
+                    <div class="login-bg">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="login-title">
+                                    <h1>@TokenShop.Common.LanguageManagment.Translate("token_buy_request")</h1>
+                                </div>
+                            </div>
+                        </div>
+                        @if (ViewBag.step == 1)
+                        {
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <p>جهت خرید توکن لطفا تعداد توکن مورد نظر را وارد نموده و بر روی گزینه مرحله کلیک نمایید</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 right">
+                                    <div class="login-input-head">
+                                        <p>@TokenShop.Common.LanguageManagment.Translate("token_count")</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 right">
+                                    <div class="login-input-area">
+                                        <input type="text" name="count" value="0" style="text-align: center;" onkeypress="return isNumberKey(this);" required oninvalid="setCustomValidity('@TokenShop.Common.LanguageManagment.Translate("please_fill_field")')" oninput="setCustomValidity('')" />
+                                        <i class="fa fa-money login-user"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4" style="text-align: left;">
+                                    <div class="login-button-pro">
+                                        <button type="submit" class="login-button login-button-rg">@TokenShop.Common.LanguageManagment.Translate("next_step")</button>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        @if (ViewBag.step == 2)
+                        {
+                            <input type="hidden" name="count" value="@ViewBag.count" />
+                            <input type="hidden" name="rial" value="@ViewBag.rial" />
+                            <input type="hidden" name="dollar" value="@ViewBag.dollar" />
+                            <input type="hidden" name="uro" value="@ViewBag.uro" />
+                            <input type="hidden" name="pond" value="@ViewBag.pond" />
+                            <input type="hidden" name="money" value="@ViewBag.rial" />
+                            <input type="hidden" name="income_price" value="@ViewBag.income_price" />
+
+                        <div class="row">
+                            <div class="col-lg-4 right">
+                                <div class="login-input-head">
+                                    <p>@TokenShop.Common.LanguageManagment.Translate("token_count")</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 right">
+                                <div class="login-input-area">
+                                    <p style="padding-top: 20px;">@ViewBag.count</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 right">
+                                <div class="login-input-head">
+                                    <p>@TokenShop.Common.LanguageManagment.Translate("amount")</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 right">
+                                <div class="login-input-area">
+                                    <input type="radio" checked /> @ViewBag.rial ریال <br/>
+                                    <input type="radio" disabled /> @ViewBag.dollar دلار <br />
+                                    <input type="radio" disabled /> @ViewBag.uro یورو <br />
+                                    <input type="radio" disabled /> @ViewBag.pond پوند <br />
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-lg-4 right">
+                                <div class="login-input-head">
+                                    <p>@TokenShop.Common.LanguageManagment.Translate("pay_mode")</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-8 right">
+                                <div class="login-input-area">
+                                    <script>
+                                        function selectPayMode(t) {
+                                            $('#reciption_box').hide();
+                                            if ($(t).val() == '1')
+                                                $('#reciption_box').show();
+                                        }
+                                    </script>
+                                    <select onchange="selectPayMode(this)" name="payMode" required oninvalid="setCustomValidity('@TokenShop.Common.LanguageManagment.Translate("please_fill_field")')" oninput="setCustomValidity('')">
+                                        <option value="">لطفا نحوه پرداخت وجه را مشخص نمایید</option>
+                                        <option value="1" selected="selected">پرداخت از طریق فیش بانکی</option>
+                                        <option value="2" disabled="disabled">پرداخت از طریق درگاه بانکی</option>
+                                    </select>
+                                    <p style="color:red">در صورت پرداخت وجه به وسیله فیش بانکی، بعد از تایید مدیریت توکن ها به حساب شما منظور خواهد شد</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <div id="reciption_box">
+                            <div class="row">
+                                <div class="col-lg-4 right">
+                                    <div class="login-input-head">
+                                        <p>@TokenShop.Common.LanguageManagment.Translate("bank")</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 right">
+                                    <div class="login-input-area">
+                                        <input type="text" name="reciption_bank" value="" style="text-align: center;"   required oninvalid="setCustomValidity('@TokenShop.Common.LanguageManagment.Translate("please_fill_field")')" oninput="setCustomValidity('')"/>
+                                        <i class="fa fa-money login-user"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 right">
+                                    <div class="login-input-head">
+                                        <p>@TokenShop.Common.LanguageManagment.Translate("number")</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 right">
+                                    <div class="login-input-area">
+                                        <input type="text" name="reciption_number" value="" style="text-align: center;" onkeypress="return isNumberKey(this);"  required oninvalid="setCustomValidity('@TokenShop.Common.LanguageManagment.Translate("please_fill_field")')" oninput="setCustomValidity('')"/>
+                                        <i class="fa fa-money login-user"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 right">
+                                    <div class="login-input-head">
+                                        <p>@TokenShop.Common.LanguageManagment.Translate("date")</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 right">
+                                    <div class="login-input-area">
+                                        <input type="text" name="reciption_date" value="" class="persian-date" style="text-align: center;" required oninvalid="setCustomValidity('@TokenShop.Common.LanguageManagment.Translate("please_fill_field")')" oninput="setCustomValidity('')"/>
+                                        <i class="fa fa-money login-user"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 right">
+                                    <div class="login-input-head">
+                                        <p>@TokenShop.Common.LanguageManagment.Translate("description")</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 right">
+                                    <div class="login-input-area">
+                                        <textarea type="text" name="descript"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 right">
+                                    <div class="login-input-head">
+                                        <p>@TokenShop.Common.LanguageManagment.Translate("attachment")</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-8 right">
+                                    <div class="login-input-area">
+
+                                        <input type="file" name="cover" id="cover"   required oninvalid="setCustomValidity('@TokenShop.Common.LanguageManagment.Translate("please_fill_field")')" oninput="setCustomValidity('')"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4" style="text-align: left;">
+                                <div class="login-button-pro">
+                                    <button type="submit" class="login-button login-button-rg">@TokenShop.Common.LanguageManagment.Translate("save")</button>
+                                </div>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+            }
+            <div class="col-lg-3"></div>
+        </div>
+    </div>
+</div>

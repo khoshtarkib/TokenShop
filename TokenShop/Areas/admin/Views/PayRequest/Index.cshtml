@@ -1,0 +1,72 @@
+﻿@model System.Collections.Generic.List<TokenShop.Models.PayRequest>
+@{
+    Layout = "~/Areas/admin/Views/Shared/_layout.cshtml";
+}
+<div class="inbox-mailbox-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="tab-content">
+                            <div id="inbox" class="tab-pane fade in animated zoomInDown custom-inbox-message shadow-reset active">
+                                <div class="mail-title inbox-bt-mg">
+                                    <h2 class="right">درخواست های واریز وجه</h2>
+                                </div>
+                                <div class="datatable-dashv1-list custom-datatable-overright">
+                                    <div id="toolbar">
+                                    </div>
+                                    <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="false" data-show-refresh="false" data-key-events="true" data-show-toggle="false" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="state" data-checkbox="true"></th>
+                                                <th data-field="id">شناسه</th>
+                                                <th data-field="name">نام مشتری</th>
+                                                <th data-field="bank">بانک</th>
+                                                <th data-field="cart">شماره کارت</th>
+                                                <th data-field="number">شماره حساب</th>
+                                                <th data-field="sheba">شماره شبا</th>
+                                                <th data-field="requestdate">تاریخ درخواست</th>
+                                                <th data-field="paydate">تاریخ واریز</th>
+                                                <th data-field="amount">مبلغ</th>
+                                                <th data-field="count">تعداد</th>
+                                                <th data-field="status">وضعیت</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @for (int i = 0; i < Model.Count; i++)
+                                            {
+                                                <tr class="new-email">
+                                                    <td></td>
+                                                    <td>@Model[i].Id</td>
+                                                    <td>@Model[i].CustomerName</td>
+                                                    <td>@Model[i].BankName</td>
+                                                    <td>@Model[i].CartNumber</td>
+                                                    <td>@Model[i].AccountNumber</td>
+                                                    <td>@Model[i].Sheba</td>
+                                                    <td>@Model[i].RequestDatePersian</td>
+                                                    <td>@Model[i].PayDatePersian</td>
+                                                    <td>@Model[i].Amount</td>
+                                                    <td>@Model[i].Count</td>
+                                                    <td>@Model[i].getStatus()</td>
+                                                    <td>
+                                                        @if (Model[i].Status != 2)
+                                                        {
+                                                        <a class="btn btn-primary" href="/admin/payrequest/view/@Model[i].Id">مشاهده</a>
+                                                        }
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

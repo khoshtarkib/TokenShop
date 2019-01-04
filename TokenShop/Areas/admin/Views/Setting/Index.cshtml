@@ -1,0 +1,258 @@
+﻿@model TokenShop.Models.Setting
+@{
+    Layout = "~/Areas/admin/Views/Shared/_layout.cshtml";
+}
+<script>
+    function isNumberKey(evt)
+{
+          var charCode = (evt.which) ? evt.which : event.keyCode;
+          if (charCode != 46 && charCode > 31
+            && (charCode < 48 || charCode > 57))
+             return false;
+
+          return true;
+}
+</script>
+@using (Html.BeginForm("Index", "Setting", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="hidden" value="@Model.Id" name="settingId" />
+    <div class="multi-uploaded-area inbox-mailbox-area mg-b-15">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="project-details-wrap shadow-reset">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="project-details-title">
+                                            <h2><span class="profile-details-name-nn">تنظیمات سیستم</span></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>عنوان سایت:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="siteTitle" value="@Model.SiteTitle" name="siteTitle" class="form-control"  required oninvalid="setCustomValidity('لطفا مقدار این فیلد را وارد نمایید')" oninput="setCustomValidity('')">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>وضعیت:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <select id="siteStatus" name="siteStatus" class="form-control">
+                                                            @if (Model.SiteStatus == 1)
+                                                            {
+                                                                <option value="1">فعال</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option value="1">فعال</option>
+                                                            }
+                                                            @if (Model.SiteStatus == 2)
+                                                            {
+                                                                <option value="2">در حال تعمیر</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option value="2">در حال تعمیر</option>
+                                                            }
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>آدرس دامنه:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="siteDomain" value="@Model.SiteDomain" name="siteDomain" class="form-control" required oninvalid="setCustomValidity('لطفا مقدار این فیلد را وارد نمایید')" oninput="setCustomValidity('')">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>درصد سود:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="globalIncomePercent" value="@Model.GlobalIncomePercent" name="globalIncomePercent" class="form-control" required oninvalid="setCustomValidity('لطفا مقدار این فیلد را وارد نمایید')" oninput="setCustomValidity('')">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>ایمیل:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="smtpAddress" value="@Model.SmtpAddress" name="smtpAddress" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>پورت smtp:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="smtpPort" value="@Model.SmtpPort" name="smtpPort" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>نام کاربری smtp:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="smtpUserName" value="@Model.SmtpUserName" name="smtpUserName" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>کلمه عبور smtp:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="password" id="smtpPassword" value="@Model.SmtpPassword" name="smtpPassword" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>معادل ریالی هر توکن:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="rial" value="@Model.Rial" name="rial" class="form-control" required oninvalid="setCustomValidity('لطفا مقدار این فیلد را وارد نمایید')" oninput="setCustomValidity('')" onkeypress="return isNumberKey(this);">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>معادل دلاری هر توکن:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="dollar" value="@Model.Dollar" name="dollar" class="form-control" required oninvalid="setCustomValidity('لطفا مقدار این فیلد را وارد نمایید')" oninput="setCustomValidity('')"  onkeypress="return isNumberKey(this);">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>معادل یورو هر توکن:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="uro" value="@Model.Uro" name="uro" class="form-control" required oninvalid="setCustomValidity('لطفا مقدار این فیلد را وارد نمایید')" oninput="setCustomValidity('')" onkeypress="return isNumberKey(this);">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>معادل پوندی هر توکن:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="pond" value="@Model.Pond" name="pond" class="form-control" required oninvalid="setCustomValidity('لطفا مقدار این فیلد را وارد نمایید')" oninput="setCustomValidity('')" onkeypress="return isNumberKey(this);">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>شعار سایت:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                                                    <div>
+                                                        <textarea id="slogan" name="slogan" class="form-control" style="width:100%;height:80px;">@Model.Slogan</textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                      </div>
+
+                                    </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <button type="submit" class="btn btn-success">ذخیره</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+}

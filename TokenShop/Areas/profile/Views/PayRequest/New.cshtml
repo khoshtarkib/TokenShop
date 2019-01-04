@@ -1,0 +1,93 @@
+﻿@model List<TokenShop.Models.BankAccount>
+@{
+    Layout = "~/Areas/profile/Views/Shared/_layout.cshtml";
+}
+<script>
+function isNumberKey(evt)
+{
+          var charCode = (evt.which) ? evt.which : event.keyCode;
+          if (charCode != 46 && charCode > 31
+            && (charCode < 48 || charCode > 57))
+             return false;
+
+          return true;
+}
+</script>
+@using (Html.BeginForm("New", "Payrequest", FormMethod.Post))
+{
+    if (Model.Count > 0)
+    {
+    <div class="inbox-mailbox-area mg-b-15">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="tab-content">
+
+                                <div id="composemail" class="tab-pane fade in animated zoomInDown custom-inbox-message shadow-reset active">
+                                    <div class="view-mail-wrap">
+                                        <div class="mail-title">
+                                            <h2>@TokenShop.Common.LanguageManagment.Translate("pick_price")</h2>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-2 right">
+                                                        <div class="compose-email-to">
+                                                            <span>@TokenShop.Common.LanguageManagment.Translate("token_count") :</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-10 right">
+                                                        <div class="compose-multiple-email">
+                                                            <input type="text" id="price" name="price" class="form-control"  onkeypress="return isNumberKey(this);" required oninvalid="setCustomValidity('@TokenShop.Common.LanguageManagment.Translate("please_fill_field")')" oninput="setCustomValidity('')">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-2 right">
+                                                        <div class="compose-email-to compose-subject-title">
+                                                            <span>@TokenShop.Common.LanguageManagment.Translate("bank_account") :</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-10 right">
+                                                        <div class="compose-multiple-email compose-subject-email">
+
+                                                            <select name="bankAccount" class="form-control">
+                                                                @for (int i = 0; i < Model.Count; i++)
+                                                                {
+                                                                    <option value="@Model[i].Id">@Model[i].BankName - @TokenShop.Common.LanguageManagment.Translate("account_number"): @Model[i].AccountNumber - @TokenShop.Common.LanguageManagment.Translate("cart_number"): @Model[i].CardNumber</option>
+                                                                }
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="view-mail-reply-list">
+                                                    <ul class="view-mail-forword">
+                                                        <li class="left">
+                                                            <button type="submit" class="btn btn-success"><i class="fa fa-reply"></i> @TokenShop.Common.LanguageManagment.Translate("save")</button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+}

@@ -1,0 +1,64 @@
+﻿@model System.Collections.Generic.List<TokenShop.Models.Post>
+@{
+    Layout = "~/Areas/admin/Views/Shared/_layout.cshtml";
+}
+<div class="inbox-mailbox-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="tab-content">
+                            <div id="inbox" class="tab-pane fade in animated zoomInDown custom-inbox-message shadow-reset active">
+                                <div class="mail-title inbox-bt-mg">
+                                    <h2 class="right">خبرهای سایت</h2>
+                                    <a class="btn btn-success left" href="/admin/news/create"><i class="fa fa-plus"></i> ثبت خبر جدید</a>
+                                </div>
+
+                                <div class="datatable-dashv1-list custom-datatable-overright">
+                                    <div id="toolbar">
+                                    </div>
+                                    <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="false" data-show-refresh="false" data-key-events="true" data-show-toggle="false" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="state" data-checkbox="true"></th>
+                                                <th data-field="id">شناسه</th>
+                                                <th data-field="cover">تصویر</th>
+                                                <th data-field="subject">عنوان</th>
+                                                <th data-field="date">دفعات مشاهده</th>
+                                                <th data-field="periority">آخرین بروزرسانی</th>
+                                                <th data-field="status">وضعیت</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @for (int i = 0; i < Model.Count; i++)
+                                    {
+                                    <tr>
+                                        <td></td>
+                                        <td>@Model[i].Id</td>
+                                        <td>
+                                            @if (!string.IsNullOrEmpty(Model[i].Cover))
+                                            {
+                                                <img src="/media/cover/@Model[i].Cover" width="80" height="80" />
+                                            }
+                                        </td>
+                                        <td>@Model[i].Subject</td>
+                                        <td>@Model[i].Seen</td>
+                                        <td>@Model[i].ModifyDatePersian</td>
+                                        <td>@Model[i].getStatus()</td>
+                                        <td><a href="/admin/news/modify/@Model[i].Id" class="btn btn-info"><i class="fa fa-pencil"></i> ویرایش</a> <form style="display: inline-block;"><button type="submit" class="btn btn-danger" name="delete" value="@Model[i].Id"><i class="fa fa-trash"></i> حذف</button></form></td>
+                                    </tr>
+                                    }
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+﻿@model List<TokenShop.Models.BankReceipt>
+
+<div id="receipt" class="tab-pane">
+    <div class="project-details-completeness">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th data-field="id">شناسه</th>
+                    <th data-field="title">جهت</th>
+                    <th data-field="bank">بانک</th>
+                    <th data-field="number">شماره فیش</th>
+                    <th data-field="date">تاریخ فیش</th>
+                    <th data-field="amount">مبلغ</th>
+                    <th data-field="description">یادداشت</th>
+                    <th data-field="status">وضعیت</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr class="new-email">
+                        <td>@Model[i].Id</td>
+                        <td>@Model[i].ReciptTypeText</td>
+                        <td>@Model[i].BankName</td>
+                        <td>@Model[i].ReceiptNumber</td>
+                        <td>@Model[i].PayDatePersian</td>
+                        <td>@Model[i].Amount</td>
+                        <td>@Model[i].Description</td>
+                        <td>@Model[i].StatusText</td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>

@@ -1,0 +1,105 @@
+﻿@{
+    Layout = "~/Areas/admin/Views/Shared/_layout.cshtml";
+}
+<script>
+function isNumberKey(evt)
+{
+          var charCode = (evt.which) ? evt.which : event.keyCode;
+          if (charCode != 46 && charCode > 31
+            && (charCode < 48 || charCode > 57))
+             return false;
+
+          return true;
+}
+</script>
+@using (Html.BeginForm("Ctype", "Token", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="multi-uploaded-area inbox-mailbox-area mg-b-15">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="project-details-wrap shadow-reset">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="project-details-title">
+                                            <h2><span class="profile-details-name-nn">اطلاعات</span> نوع توکن جدید</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>عنوان:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="title" value="" name="title" class="form-control" required oninvalid="setCustomValidity('لطفا مقدار این فیلد را وارد نمایید')" oninput="setCustomValidity('')">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>ارزش واقعی:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="real" value="0" name="real" class="form-control" onkeypress="return isNumberKey(this);" required oninvalid="setCustomValidity('لطفا مقدار این فیلد را وارد نمایید')" oninput="setCustomValidity('')">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>ارزش ریالی:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="toman" value="0" name="toman" class="form-control" onkeypress="return isNumberKey(this);" required oninvalid="setCustomValidity('لطفا مقدار این فیلد را وارد نمایید')" oninput="setCustomValidity('')">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>توضیحات:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <textarea type="text" id="description" value="" name="description" class="form-control"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <button type="submit" class="btn btn-success">ذخیره</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+}

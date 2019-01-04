@@ -1,0 +1,53 @@
+﻿@model System.Collections.Generic.List<TokenShop.Models.Order>
+@{
+    Layout = "~/Areas/admin/Views/Shared/_layout.cshtml";
+}
+
+<div class="data-table-area mg-b-15 fade in animated zoomInDown">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline13-list shadow-reset">
+                    <div class="sparkline13-hd">
+                        <div class="main-sparkline13-hd">
+                            <h1>درخواست های خرید توکن</h1>
+                        </div>
+                    </div>
+                    <div class="sparkline13-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright">
+                            <div id="toolbar">
+                            </div>
+                            <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="false" data-show-refresh="false" data-key-events="true" data-show-toggle="false" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                <thead>
+                                    <tr>
+                                        <th data-field="state" data-checkbox="true"></th>
+                                        <th data-field="id">شناسه</th>
+                                        <th data-field="customerName">درخواست دهنده</th>
+                                        <th data-field="date">تاریخ درخواست</th>
+                                        <th data-field="amount">مبلغ</th>
+                                        <th data-field="status">وضعیت</th>
+                                        <th data-field="description">توضیحات</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (int i = 0; i < Model.Count; i++)
+                                    {
+                                    <tr>
+                                        <td></td>
+                                        <td>@Model[i].Id</td>
+                                        <td>@Model[i].CustomerName</td>
+                                        <td>@Model[i].CreateDatePersian</td>
+                                        <td>@Model[i].Amount</td>
+                                        <td>@Model[i].getStatus()</td>
+                                        <td>@Model[i].Description</td>
+                                    </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

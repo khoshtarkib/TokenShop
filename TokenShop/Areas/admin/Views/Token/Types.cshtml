@@ -1,0 +1,54 @@
+﻿@model System.Collections.Generic.List<TokenShop.Models.TokenType>
+@{
+    Layout = "~/Areas/admin/Views/Shared/_layout.cshtml";
+}
+
+<div class="data-table-area mg-b-15 fade in animated zoomInDown">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline13-list shadow-reset">
+                    <div class="sparkline13-hd">
+                        <div class="main-sparkline13-hd">
+                            <h1>انواع توکن</h1>
+                            <a class="btn btn-success left" href="/admin/token/ctype"><i class="fa fa-plus"></i> ثبت نوع توکن جدید</a>
+                        </div>
+                    </div>
+                    <div class="sparkline13-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright">
+                            <div id="toolbar">
+                            </div>
+                            <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="false" data-show-refresh="false" data-key-events="true" data-show-toggle="false" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                <thead>
+                                    <tr>
+                                        <th data-field="state" data-checkbox="true"></th>
+                                        <th data-field="id">شناسه</th>
+                                        <th data-field="name">عنوان</th>
+                                        <th data-field="real">ارزش واقعی</th>
+                                        <th data-field="toman">ارزش ریالی</th>
+                                        <th data-field="description">توضیحات</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (int i = 0; i < Model.Count; i++)
+                                    {
+                                        <tr>
+                                            <td></td>
+                                            <td>@Model[i].Id</td>
+                                            <td>@Model[i].Title</td>
+                                            <td>@Model[i].RealValue</td>
+                                            <td>@Model[i].TomanValue</td>
+                                            <td>@Model[i].Description</td>
+                                            <td><a href="/admin/token/mtype/@Model[i].Id" class="btn btn-info"><i class="fa fa-eye"></i>ویرایش</a> <form style="display:inline-block"><button type="submit" class="btn btn-danger">حذف</button></form></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

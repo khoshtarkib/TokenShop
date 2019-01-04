@@ -1,0 +1,63 @@
+﻿@model System.Collections.Generic.List<TokenShop.Models.Post>
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="/content/front/css/swiper.min.css">
+<!-- Demo styles -->
+<style>
+    html, body {
+        position: relative;
+        height: 100%;
+    }
+
+    .swiper-container {
+        width: 100%;
+        background-color:rgb(255, 235, 59);
+        margin-top: 77px
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+</style>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+                <div class="swiper-slide"><img src="/media/cover/@Model[i].Cover" style="width:100%" /></div>
+        }
+    </div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
+<!-- Swiper JS -->
+<script src="/content/front/js/swiper.min.js"></script>
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+        },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      }, pagination: {
+          el: '.swiper-pagination',
+      },
+    });
+</script>

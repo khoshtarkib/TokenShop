@@ -1,0 +1,243 @@
+﻿@model TokenShop.Models.Customer
+@{
+    Layout = "~/Areas/admin/Views/Shared/_layout.cshtml";
+}
+@using (Html.BeginForm("Display", "Customers", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="hidden" id="customerId" name="customerId" value="@Model.Id" />
+    <div class="multi-uploaded-area inbox-mailbox-area mg-b-15">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+
+
+                    <div class="row">
+                        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            <div class="project-details-wrap shadow-reset">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="project-details-title">
+                                            <h2><span class="profile-details-name-nn">اطلاعات</span> @Model.FirstName @Model.LastName</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>نام:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="firstName" value="@Model.FirstName" name="firstName" class="form-control" required oninvalid="setCustomValidity('لطفا مقدار این فیلد را وارد نمایید')" oninput="setCustomValidity('')">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>نام خانوادگی:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="lastName" value="@Model.LastName" name="lastName" class="form-control" required oninvalid="setCustomValidity('لطفا مقدار این فیلد را وارد نمایید')" oninput="setCustomValidity('')">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>کدملی:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="nationalCode" value="@Model.NationalCode" name="nationalCode" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>شهر:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="city" value="@Model.City" name="city" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>آدرس:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="address" value="@Model.Address" name="address" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>ایمیل:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="email" value="@Model.Email" name="email" class="form-control" required oninvalid="setCustomValidity('لطفا مقدار این فیلد را وارد نمایید')" oninput="setCustomValidity('')">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>وبسایت:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="webAddress" value="@Model.WebAddress" name="webAddress" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>تلفن:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="phone" value="@Model.Phone" name="phone" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>موبایل:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="mobilePhone" value="@Model.MobilePhone" name="mobilePhone" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>وضعیت:</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+
+                                                        <select name="state" class="form-control">
+                                                            @if (Model.State == 1)
+                                                            {
+                                                            <option value="1" selected>فعال</option>
+                                                            }
+                                                            else
+                                                            {
+                                                            <option value="1">فعال</option>
+                                                            }
+                                                            @if (Model.State == 2)
+                                                            {
+                                                            <option value="2" selected>غیرفعال</option>
+                                                            }
+                                                            else
+                                                            {
+                                                            <option value="2">غیرفعال</option>
+                                                            }
+                                                        </select>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <button type="submit" class="btn btn-success">ذخیره</button>
+                                    </div>
+                                </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="project-details-tab">
+                                                    <ul class="nav nav-tabs res-pd-less-sm">
+                                                        <li class="active">
+                                                            <a data-toggle="tab" href="#home">تیکتهای پشتیبانی</a>
+                                                        </li>
+                                                        <li>
+                                                            <a data-toggle="tab" href="#token">سوابق توکن ها</a>
+                                                        </li>
+                                                        <li>
+                                                            <a data-toggle="tab" href="#cart">حسابهای بانکی</a>
+                                                        </li>
+                                                        <li>
+                                                            <a data-toggle="tab" href="#receipt">فیش های بانکی</a>
+                                                        </li>
+                                                        <li>
+                                                            <a data-toggle="tab" href="#menu1">سوابق خرید</a>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="tab-content res-tab-content-project">
+                                                        @{ Html.RenderAction("Tickets", Model.Id);}
+                                                        @{ Html.RenderAction("Token", Model.Id);}
+                                                        @{ Html.RenderAction("BankAccounts", Model.Id);}
+                                                        @{ Html.RenderAction("Receipt", Model.Id);}
+                                                        @{ Html.RenderAction("Orders", Model.Id);}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                    <div class="project-details-descri project-details-mg-t-30 shadow-reset">
+                                        <h2>موجودی فعلی</h2>
+                                        <p>@Model.TokenCount واحد</p>
+                                    </div>
+                                    <div class="project-details-descri project-details-mg-t-30 shadow-reset">
+                                        <h2>شناسه یکتا</h2>
+                                        <p>@Model.UserCode</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+}

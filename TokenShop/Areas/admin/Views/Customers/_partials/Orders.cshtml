@@ -1,0 +1,41 @@
+﻿@model List<TokenShop.Models.Order>
+
+<div id="menu1" class="tab-pane">
+    <div class="project-details-completeness">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>وضعیت</th>
+                    <th>مبلغ</th>
+                    <th>تاریخ درخواست</th>
+                    <th>تاریخ بروزرسانی</th>
+                    <th>توضیحات</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                <tr>
+                    <td>
+                        <span class="label label-primary"><i class="fa fa-check"></i> @Model[i].getStatus()</span>
+                    </td>
+                    <td>
+                        @Model[i].Amount
+                    </td>
+                    <td>
+                        @Model[i].CreateDatePersian
+                    </td>
+                    <td>
+                        @Model[i].ModifyDatePersian
+                    </td>
+                    <td>
+                        <p class="prject-details-small">
+                            @Model[i].Description
+                        </p>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,125 @@
+﻿@model System.Collections.Generic.List<TokenShop.Models.Post>
+@{
+    Layout = "~/Views/shared/_layout.cshtml";
+}
+
+
+@{Html.RenderAction("TopSlider");}
+
+
+<main class="page landing-page">
+    <section class="clean-block features">
+        <div class="container">
+            <div class="block-heading">
+                <h2 class="text-info">امکانات</h2>
+                <p>توضیحی کوتاه در مورد این امکانات</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-5 feature-box">
+                    <i class="icon-star icon"></i>
+                    <h4>ویژگی شماره یک</h4>
+                    <p>توضیحی کوتاه در مورد این امکانات</p>
+                </div>
+                <div class="col-md-5 feature-box">
+                    <i class="icon-pencil icon"></i>
+                    <h4>ویژگی شماره یک</h4>
+                    <p>توضیحی کوتاه در مورد این امکانات</p>
+                </div>
+                <div class="col-md-5 feature-box">
+                    <i class="icon-screen-smartphone icon"></i>
+                    <h4>ویژگی شماره یک</h4>
+                    <p>توضیحی کوتاه در مورد این امکانات</p>
+                </div>
+                <div class="col-md-5 feature-box">
+                    <i class="icon-refresh icon"></i>
+                    <h4>ویژگی شماره یک</h4>
+                    <p>توضیحی کوتاه در مورد این امکانات</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<main class="page pricing-table-page">
+    <section class="clean-block clean-pricing dark">
+        <div class="container">
+            <div class="block-heading">
+                <h2 class="text-info">تعرفه ها</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-5 col-lg-4">
+                    <div class="clean-pricing-item">
+                        <div class="heading">
+                            <h3>پایه</h3>
+                        </div>
+                        <p>توضیح کوتاه در مورد این طرح</p>
+                        <div class="features">
+                            <h4><span class="feature">ویژگی اول:&nbsp;</span><span>مقدار</span></h4>
+                            <h4><span class="feature">ویژگی دوم:&nbsp;</span><span>مقدار</span></h4>
+                            <h4><span class="feature">ویژگی سوم:&nbsp;</span><span>مقدار</span></h4>
+                        </div>
+                        <div class="price">
+                            <h4>25 تومان</h4>
+                        </div><button class="btn btn-outline-primary btn-block" type="button">مشاهده</button>
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4">
+                    <div class="clean-pricing-item">
+                        <div class="ribbon"><span>پیشنهاد ویژه</span></div>
+                        <div class="heading">
+                            <h3>پیشرفته</h3>
+                        </div>
+                        <p>توضیح کوتاه در مورد این طرح</p>
+                        <div class="features">
+                            <h4><span class="feature">ویژگی اول:&nbsp;</span><span>مقدار</span></h4>
+                            <h4><span class="feature">ویژگی دوم:&nbsp;</span><span>مقدار</span></h4>
+                            <h4><span class="feature">ویژگی سوم:&nbsp;</span><span>مقدار</span></h4>
+                        </div>
+                        <div class="price">
+                            <h4>100 تومان</h4>
+                        </div><button class="btn btn-primary btn-block" type="button">مشاهده</button>
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4">
+                    <div class="clean-pricing-item">
+                        <div class="heading">
+                            <h3>حرفه ای</h3>
+                        </div>
+                        <p>توضیح کوتاه در مورد این طرح</p>
+                        <div class="features">
+                            <h4><span class="feature">ویژگی اول:&nbsp;</span><span>مقدار</span></h4>
+                            <h4><span class="feature">ویژگی دوم:&nbsp;</span><span>مقدار</span></h4>
+                            <h4><span class="feature">ویژگی سوم:&nbsp;</span><span>مقدار</span></h4>
+                        </div>
+                        <div class="price">
+                            <h4>140 تومان</h4>
+                        </div><button class="btn btn-outline-primary btn-block" type="button">مشاهده</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<main class="page service-page">
+    <section class="clean-block clean-services white">
+        <div class="container">
+            <div class="block-heading">
+                <h2 class="text-info">آخرین خبرها و اطلاعیه ها</h2>
+            </div>
+            <div class="row">
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <img class="card-img-top w-100 d-block" src="/media/cover/@Model[i].Cover">
+                        <div class="card-body">
+                            <h4 class="card-title">@Model[i].Subject</h4>
+                        </div>
+                        <div><a class="btn btn-outline-primary btn-sm" href="/post/detail/@Model[i].Id">ادامه</a></div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
+</main>
+

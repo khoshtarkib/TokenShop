@@ -1,0 +1,54 @@
+﻿@model List<TokenShop.Models.CustomerToken>
+
+<div id="token" class="tab-pane ">
+    <div class="project-details-completeness">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>تعداد</th>
+                    <th>عملکرد</th>
+                    <th>ریال</th>
+                    <th>دلار</th>
+                    <th>پوند</th>
+                    <th>یورو</th>
+                    <th>تاریخ</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @Model[i].Count
+                        </td>
+                        <td>
+                                                        @if (Model[i].Action == 1)
+                                                        {
+                                                            <span>افزایش</span>
+                                                        }
+                                                        @if (Model[i].Action == 2)
+                                                        {
+                                                            <span>کاهش</span>
+                                                        }
+                        </td>
+                        <td>
+                            @Model[i].RialPrice
+                        </td>
+                        <td>
+                            @Model[i].DollarPrice
+                        </td>
+                        <td>
+                            @Model[i].PondPrice
+                        </td>
+                        <td>
+                            @Model[i].UroPrice
+                        </td>
+                        <td>
+                            @Model[i].DatePersian
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

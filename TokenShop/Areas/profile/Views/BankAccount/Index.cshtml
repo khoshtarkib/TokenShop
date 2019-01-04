@@ -1,0 +1,63 @@
+﻿@model System.Collections.Generic.List<TokenShop.Models.BankAccount>
+@{
+    Layout = "~/Areas/profile/Views/Shared/_layout.cshtml";
+}
+<div class="inbox-mailbox-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="tab-content">
+                            <div id="inbox" class="tab-pane fade in animated zoomInDown custom-inbox-message shadow-reset active">
+                                <div class="mail-title inbox-bt-mg">
+                                    <h2 class="right">@TokenShop.Common.LanguageManagment.Translate("bank_accounts")</h2>
+                                    <a class="btn btn-success left" href="/@TokenShop.Common.LanguageManagment.lang/profile/bankaccount/new"><i class="fa fa-reply"></i> @TokenShop.Common.LanguageManagment.Translate("new_record")</a>
+                                </div>
+                                <div class="datatable-dashv1-list custom-datatable-overright">
+                                    <div id="toolbar">
+                                    </div>
+                                    <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="false" data-show-refresh="false" data-key-events="true" data-show-toggle="false" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="state" data-checkbox="true"></th>
+                                                <th data-field="id">@TokenShop.Common.LanguageManagment.Translate("id")</th>
+                                                <th data-field="bank">@TokenShop.Common.LanguageManagment.Translate("bank")</th>
+                                                <th data-field="accountnumber">@TokenShop.Common.LanguageManagment.Translate("account_number")</th>
+                                                <th data-field="cardnumber">@TokenShop.Common.LanguageManagment.Translate("cart_number")</th>
+                                                <th data-field="sheba">@TokenShop.Common.LanguageManagment.Translate("sheba")</th>
+                                                <th data-field="status">@TokenShop.Common.LanguageManagment.Translate("status")</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @for (int i = 0; i < Model.Count; i++)
+                                            {
+                                                <tr class="new-email">
+                                                    <td></td>
+                                                    <td>@Model[i].Id</td>
+                                                    <td>@Model[i].BankName</td>
+                                                    <td>@Model[i].AccountNumber</td>
+                                                    <td>@Model[i].CardNumber</td>
+                                                    <td>@Model[i].Sheba</td>
+                                                    <td>@Model[i].getStatus()</td>
+                                                    <td>
+                                                    @if (Model[i].Status == 1)
+                                                    {
+                                                        <a href="/@TokenShop.Common.LanguageManagment.lang/profile/bankaccount/modify/@Model[i].Id" class="btn btn-info">@TokenShop.Common.LanguageManagment.Translate("edit") <i class="fa fa-pencil"></i></a>
+                                                    }
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

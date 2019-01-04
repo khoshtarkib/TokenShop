@@ -1,0 +1,64 @@
+﻿@model System.Collections.Generic.List<TokenShop.Models.ContactUs>
+@{
+    Layout = "~/Areas/admin/Views/Shared/_layout.cshtml";
+}
+
+<div class="data-table-area mg-b-15 fade in animated zoomInDown">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline13-list shadow-reset">
+                    <div class="sparkline13-hd">
+                        <div class="main-sparkline13-hd">
+                            <h1>درخواست های تماس</h1>
+                        </div>
+                    </div>
+                    <div class="sparkline13-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright">
+                            <div id="toolbar">
+                            </div>
+                            <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="false" data-show-refresh="false" data-key-events="true" data-show-toggle="false" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                <thead>
+                                    <tr>
+                                        <th data-field="state" data-checkbox="true"></th>
+                                        <th data-field="id">شناسه</th>
+                                        <th data-field="name">نام</th>
+                                        <th data-field="email">ایمیل</th>
+                                        <th data-field="subject">موضوع</th>
+                                        <th data-field="date">تاریخ</th>
+                                        <th data-field="status">وضعیت</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (int i = 0; i < Model.Count; i++)
+                                    {
+                                        <tr>
+                                            <td></td>
+                                            <td>@Model[i].Id</td>
+                                            <td>@Model[i].Name</td>
+                                            <td>@Model[i].Email</td>
+                                            <td>@Model[i].Subject</td>
+                                            <td>@Model[i].DatePersian</td>
+                                            <td>
+                                            @if (Model[i].Read)
+                                            {
+                                                <span class="btn btn-default btn-xs">خوانده شده</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="btn btn-success btn-xs">جدید</span>
+                                            }
+                                            </td>
+                                            <td><a class="btn btn-primary" href="/admin/contactus/display/@Model[i].Id"><i class="fa fa-eye"></i> نمایش</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

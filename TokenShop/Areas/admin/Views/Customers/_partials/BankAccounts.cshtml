@@ -1,0 +1,31 @@
+﻿@model List<TokenShop.Models.BankAccount>
+
+<div id="cart" class="tab-pane">
+    <div class="project-details-completeness">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>شناسه</th>
+                    <th>بانک</th>
+                    <th>شماره حساب</th>
+                    <th>شماره کارت</th>
+                    <th>شماره شبا</th>
+                    <th>وضعیت</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr class="new-email">
+                        <td>@Model[i].Id</td>
+                        <td>@Model[i].BankName</td>
+                        <td>@Model[i].AccountNumber</td>
+                        <td>@Model[i].CardNumber</td>
+                        <td>@Model[i].Sheba</td>
+                        <td>@Model[i].getStatus()</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

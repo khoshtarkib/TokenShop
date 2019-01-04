@@ -1,0 +1,187 @@
+﻿@charset "utf-8";@font-face{font-family:IRANSans;font-style:normal;font-weight:bold;src:url('fonts/IRANSansWeb_Bold.eot');src:url('fonts/IRANSansWeb_Bold.eot?#iefix') format('embedded-opentype'),
+url('fonts/IRANSansWeb_Bold.woff2') format('woff2'),
+url('fonts/IRANSansWeb_Bold.woff') format('woff'),
+url('fonts/IRANSansWeb_Bold.ttf') format('truetype');}
+@font-face{font-family:IRANSans;font-style:normal;font-weight:500;src:url('fonts/IRANSansWeb_Medium.eot');src:url('fonts/IRANSansWeb_Medium.eot?#iefix') format('embedded-opentype'),
+url('fonts/IRANSansWeb_Medium.woff2') format('woff2'),
+url('fonts/IRANSansWeb_Medium.woff') format('woff'),
+url('fonts/IRANSansWeb_Medium.ttf') format('truetype');}
+@font-face{font-family:IRANSans;font-style:normal;font-weight:300;src:url('fonts/IRANSansWeb_Light.eot');src:url('fonts/IRANSansWeb_Light.eot?#iefix') format('embedded-opentype'),
+url('fonts/IRANSansWeb_Light.woff2') format('woff2'),
+url('fonts/IRANSansWeb_Light.woff') format('woff'),
+url('fonts/IRANSansWeb_Light.ttf') format('truetype');}
+@font-face{font-family:IRANSans;font-style:normal;font-weight:200;src:url('fonts/IRANSansWeb_UltraLight.eot');src:url('fonts/IRANSansWeb_UltraLight.eot?#iefix') format('embedded-opentype'),
+url('fonts/IRANSansWeb_UltraLight.woff2') format('woff2'),
+url('fonts/IRANSansWeb_UltraLight.woff') format('woff'),
+url('fonts/IRANSansWeb_UltraLight.ttf') format('truetype');}
+@font-face{font-family:IRANSans;font-style:normal;font-weight:normal;src:url('fonts/IRANSansWeb.eot');src:url('fonts/IRANSansWeb.eot?#iefix') format('embedded-opentype'),
+url('fonts/IRANSansWeb.woff2') format('woff2'),
+url('fonts/IRANSansWeb.woff') format('woff'),
+url('fonts/IRANSansWeb.ttf') format('truetype');}
+.IRANSansBold{font-family:IRANSans-web;color:#000;margin-right:50px;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#FFF;font-weight:bold;}
+.IRANSansMedium{font-family:IRANSans-web;color:#000;margin-right:50px;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#FFF;font-weight:500;}
+.IRANSansUltraLight{font-family:IRANSans-web;color:#000;margin-right:50px;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#FFF;font-weight:200;}
+.IRANSansLight{font-family:IRANSans-web;color:#000;margin-right:50px;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#FFF;font-weight:300;}
+.IRANSans{font-family:IRANSans-web;color:#000;margin-right:50px;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#FFF;font-weight:normal;}
+html{
+	overflow-x: hidden;
+}
+body {
+    font-family: IRANSans,Nassim,tahoma;
+    background-color: rgb(255, 235, 59);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	line-height: 200%;
+	direction: rtl;
+     position: inherit;
+}
+.clean-navbar .navbar-nav .nav-item {
+    padding-left: 2rem;
+	padding-right: 0;
+}
+.clean-navbar .navbar-nav .nav-link
+{
+	text-align:right;
+}
+.navbar-nav{
+padding-right:0;
+}
+.clean-navbar .logo
+{
+	margin-right:0;
+	margin-left: 2rem;
+}
+.page-footer.dark h5
+{
+	text-align:right;
+}
+.page-footer ul
+{
+	padding-right:0;
+}
+.page-footer a
+{
+	display: block;
+    text-align: right;
+	padding-right:1rem;
+}
+
+.form-group label
+{
+	float:right;
+}
+.form-check-input
+{
+	right:0;
+     margin-top: 10px;
+}
+.form-check-label {
+    margin-right: 20px;
+}
+.feature-box h4
+{
+	text-align:right;
+}
+.feature-box
+{
+	padding:15px 70px 15px 20px
+}
+.feature-box .icon
+{
+	right:15px;
+}
+.feature-box p
+{
+	text-align:right;
+}
+.clean-pricing-item .ribbon
+{
+	padding-top:0
+}
+.simple-head {
+	max-height: 400px;
+}
+#wrap {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+#particles-js {
+	width: 100%;
+	background: rgb(0, 150, 136);
+	background-size: cover;
+}
+.simple-head {
+	background-size: cover;
+	max-height: 800px;
+}
+.simple-head .position-center-center {
+	margin-top: 30px;
+	width: 100%;
+}
+.simple-head .btn {
+	margin: 0 5px;
+	margin-top: 30px;
+}
+.simple-head h1 {
+	color: #fff;
+	margin: 0px;
+	letter-spacing: -1px;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+.simple-head p {
+	color: #fff;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 30px;
+}
+.simple-head .distri .countdown {
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+.simple-head .distri {
+	background: #fff;
+	padding: 10px 20px;
+	border-radius: 4px;
+}
+.simple-head .distri h6 {
+	font-size: 18px;
+	margin: 0px;
+	margin-top: 20px;
+	font-weight: 600;
+}
+.simple-head .distri .progress {
+	margin: 10px 0;
+}
+.simple-head .distri .progress span {
+	text-align: left;
+}
+.simple-head .distri .progress span small {
+	float: right;
+	margin-top: 2px;
+}
+.simple-head .distri .countdown li p {
+	color: #333;
+	font-size: 12px;
+}
+.position-center-center {
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+.clean-block.clean-post .post-body .post-info span:not(:last-child)
+{
+        margin-left: 40px;
+        margin-right:0;
+}
+.post-body
+{
+    direction: rtl;
+    text-align: RIGHT;
+}

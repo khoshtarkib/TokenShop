@@ -1,0 +1,156 @@
+﻿@model TokenShop.Models.BankAccount
+@{
+    Layout = "~/Areas/admin/Views/Shared/_layout.cshtml";
+}
+@using (Html.BeginForm("Modify", "Cart", FormMethod.Post))
+{
+    <input type="hidden" name="bankId" value="@Model.Id" />
+    <div class="inbox-mailbox-area mg-b-15">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="tab-content">
+
+                                <div id="composemail" class="tab-pane fade in animated zoomInDown custom-inbox-message shadow-reset active">
+                                    <div class="view-mail-wrap">
+                                        <div class="mail-title">
+                                            <h2>ویرایش حساب بانکی</h2>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-2 right">
+                                                        <div class="compose-email-to">
+                                                            <span>شماره حساب</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-10 right">
+                                                        <div class="compose-multiple-email">
+                                                            <input type="text" id="number" value="@Model.AccountNumber" name="number" class="form-control" required oninvalid="setCustomValidity('لطفا مقدار این فیلد را وارد نمایید')" oninput="setCustomValidity('')">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-2 right">
+                                                        <div class="compose-email-to">
+                                                            <span>شماره کارت</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-10 right">
+                                                        <div class="compose-multiple-email">
+                                                            <input type="text" id="cart" name="cart" value="@Model.CardNumber" class="form-control" required oninvalid="setCustomValidity('لطفا مقدار این فیلد را وارد نمایید')" oninput="setCustomValidity('')">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-2 right">
+                                                        <div class="compose-email-to">
+                                                            <span>شماره شبا</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-10 right">
+                                                        <div class="compose-multiple-email">
+                                                            <input type="text" id="sheba" name="sheba" value="@Model.Sheba" class="form-control" required oninvalid="setCustomValidity('لطفا مقدار این فیلد را وارد نمایید')" oninput="setCustomValidity('')">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-2 right">
+                                                        <div class="compose-email-to compose-subject-title">
+                                                            <span>بانک :</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-10 right">
+                                                        <div class="compose-multiple-email compose-subject-email">
+                                                            <select name="bank" class="form-control">
+                                                                @if (Model.BankId == 1)
+                                                                {
+                                                                    <option value="1">ملی</option>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <option value="1" selected>ملی</option>
+                                                                }
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-2 right">
+                                                        <div class="compose-email-to compose-subject-title">
+                                                            <span>وضعیت :</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-10 right">
+                                                        <div class="compose-multiple-email compose-subject-email">
+                                                            <select name="status" class="form-control">
+                                                                @if (Model.Status == 1)
+                                                                {
+                                                                    <option value="1" selected>در انتظار تایید</option>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <option value="1">در انتظار تایید</option>
+                                                                }
+                                                                @if (Model.Status == 2)
+                                                                {
+                                                                    <option value="2" selected>تایید شده</option>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <option value="2">تایید شده</option>
+                                                                }
+                                                                @if (Model.Status == 3)
+                                                                {
+                                                                    <option value="3" selected>رد شده</option>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <option value="3">رد شده</option>
+                                                                }
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="view-mail-reply-list">
+                                                    <ul class="view-mail-forword">
+                                                        <li class="left">
+                                                            <button type="submit" class="btn btn-success"><i class="fa fa-reply"></i> ثبت</button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

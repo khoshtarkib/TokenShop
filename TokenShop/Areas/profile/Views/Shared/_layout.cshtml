@@ -1,0 +1,325 @@
+﻿@{
+    Layout = null;
+}
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
+    <link rel="stylesheet" href="/content/profile/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/content/profile/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/content/profile/css/adminpro-custon-icon.css">
+    <link rel="stylesheet" href="/content/profile/css/meanmenu.min.css">
+    <link rel="stylesheet" href="/content/profile/css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="/content/profile/css/animate.css">
+    <link rel="stylesheet" href="/content/profile/css/jvectormap/jquery-jvectormap-2.0.3.css">
+    <link rel="stylesheet" href="/content/profile/css/data-table/bootstrap-table.css">
+    <link rel="stylesheet" href="/content/profile/css/data-table/bootstrap-editable.css">
+    <link rel="stylesheet" href="/content/profile/css/normalize.css">
+    <link rel="stylesheet" href="/content/profile/css/c3.min.css">
+    <link rel="stylesheet" href="/content/profile/css/form.css">
+    <link rel="stylesheet" href="/content/profile/style.css">
+    <link rel="stylesheet" href="/content/profile/css/responsive.css">
+    <script src="/content/profile/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="/content/profile/js/vendor/jquery-1.11.3.min.js"></script>
+</head>
+<body class="materialdesign">
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- Header top area start-->
+    <div class="wrapper-pro">
+        <div class="left-sidebar-pro">
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <a href="#">
+                        <img src="/content/admin/img/login.png" alt="" />
+                    </a>
+                    <h3>@Session["customer_fullname"]</h3>
+                    <p>@TokenShop.Common.LanguageManagment.Translate("id"): @Session["customer_code"]</p>
+                    <strong>@TokenShop.Common.LanguageManagment.Translate("menu")</strong>
+                </div>
+                <div class="left-custom-menu-adp-wrap">
+                    <ul class="nav navbar-nav left-sidebar-menu-pro">
+                        <li class="nav-item">
+                            <a href="/@TokenShop.Common.LanguageManagment.lang/profile/home" class="nav-link dropdown-toggle"><i class="fa big-icon fa-home"></i> <span class="mini-dn">@TokenShop.Common.LanguageManagment.Translate("dashboard")</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/@TokenShop.Common.LanguageManagment.lang/profile/ticket" class="nav-link dropdown-toggle"><i class="fa big-icon fa-envelope"></i> <span class="mini-dn">@TokenShop.Common.LanguageManagment.Translate("tickets")</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/@TokenShop.Common.LanguageManagment.lang/profile/token/buy" class="nav-link dropdown-toggle"><i class="fa big-icon fa-money"></i> <span class="mini-dn">@TokenShop.Common.LanguageManagment.Translate("token_buy")</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/@TokenShop.Common.LanguageManagment.lang/profile/token/transaction" class="nav-link dropdown-toggle"><i class="fa big-icon fa-money"></i> <span class="mini-dn">@TokenShop.Common.LanguageManagment.Translate("token_transactions")</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/@TokenShop.Common.LanguageManagment.lang/profile/token/transfer" class="nav-link dropdown-toggle"><i class="fa big-icon fa-exchange"></i> <span class="mini-dn">@TokenShop.Common.LanguageManagment.Translate("token_transfer")</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/@TokenShop.Common.LanguageManagment.lang/profile/payrequest/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-exchange"></i> <span class="mini-dn">@TokenShop.Common.LanguageManagment.Translate("pick_price")</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/@TokenShop.Common.LanguageManagment.lang/profile/bankaccount/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-exchange"></i> <span class="mini-dn">@TokenShop.Common.LanguageManagment.Translate("bank_accounts")</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/@TokenShop.Common.LanguageManagment.lang/profile/receipt/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-exchange"></i> <span class="mini-dn">@TokenShop.Common.LanguageManagment.Translate("bank_receiptions")</span></a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- Header top area start-->
+        <div class="content-inner-all">
+            <div class="header-top-area">
+                <div class="fixed-header-top">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-6 col-sm-6 col-xs-12 right">
+                                <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn">
+                                    <i class="fa fa-bars"></i>
+                                </button>
+                                <div class="admin-logo logo-wrap-pro">
+                                    <a href="#">
+                                        <img src="img/logo/log.png" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-1 col-sm-1 col-xs-12 right">
+                                <div class="header-top-menu tabl-d-n">
+                                    <ul class="nav navbar-nav mai-top-nav">
+                                        <li class="nav-item">
+                                            <a href="/@TokenShop.Common.LanguageManagment.lang/" class="nav-link">@TokenShop.Common.LanguageManagment.Translate("home")</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="/@TokenShop.Common.LanguageManagment.lang/aboutus" class="nav-link">@TokenShop.Common.LanguageManagment.Translate("about_us")</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="/@TokenShop.Common.LanguageManagment.lang/faq" class="nav-link">@TokenShop.Common.LanguageManagment.Translate("faq")</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 right">
+                                <div class="header-right-info">
+                                    <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                        <li class="nav-item">
+                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                                <span class="adminpro-icon adminpro-user-rounded header-riht-inf"></span>
+                                                <span class="admin-name">@TokenShop.Common.LanguageManagment.Translate("profile")</span>
+                                                <span class="admin-id">@TokenShop.Common.LanguageManagment.Translate("id"): @Session["customer_code"]</span>
+                                                <span class="author-project-icon adminpro-icon adminpro-down-arrow"></span>
+                                            </a>
+                                            <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated flipInX">
+                                                <li>
+                                                    <a href="/@TokenShop.Common.LanguageManagment.lang/profile/my/account"><span class="adminpro-icon adminpro-user-rounded author-log-ic"></span>@TokenShop.Common.LanguageManagment.Translate("profile_me")</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/@TokenShop.Common.LanguageManagment.lang/profile/signout"><span class="adminpro-icon adminpro-locked author-log-ic"></span>@TokenShop.Common.LanguageManagment.Translate("signout")</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Header top area end-->
+            <!-- Breadcome start-->
+            <div class="breadcome-area mg-b-30 small-dn">
+            </div>
+            <!-- Breadcome End-->
+            <!-- Mobile Menu start -->
+            <div class="mobile-menu-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mobile-menu">
+                                <nav id="dropdown">
+                                    <ul class="mobile-menu-nav">
+                                        <li><a href="/@TokenShop.Common.LanguageManagment.lang/profile/home">@TokenShop.Common.LanguageManagment.Translate("dashboard")</a></li>
+                                        <li><a href="/@TokenShop.Common.LanguageManagment.lang/profile/ticket">@TokenShop.Common.LanguageManagment.Translate("tickets")</a></li>
+                                        <li><a href="/@TokenShop.Common.LanguageManagment.lang/profile/token/buy">@TokenShop.Common.LanguageManagment.Translate("token_buy")</a></li>
+                                        <li><a href="/@TokenShop.Common.LanguageManagment.lang/profile/token/transaction">@TokenShop.Common.LanguageManagment.Translate("token_transactions")</a></li>
+                                        <li><a href="/@TokenShop.Common.LanguageManagment.lang/profile/payrequest/">@TokenShop.Common.LanguageManagment.Translate("token_transfer")</a></li>
+                                        <li><a href="/@TokenShop.Common.LanguageManagment.lang/profile/bankaccount/">@TokenShop.Common.LanguageManagment.Translate("pick_price")</a></li>
+                                        <li><a href="/@TokenShop.Common.LanguageManagment.lang/profile/receipt/">@TokenShop.Common.LanguageManagment.Translate("bank_accounts")</a></li>
+                                        <li><a href="/@TokenShop.Common.LanguageManagment.lang/profile/token/transfer">@TokenShop.Common.LanguageManagment.Translate("bank_receiptions")</a></li>
+</ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu end -->
+            <!-- Breadcome start-->
+            <div class="breadcome-area des-none mg-b-30">
+            </div>
+            <!-- Breadcome End-->
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        @if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+                       {
+                            <div class="alert alert-success">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <strong>@TokenShop.Common.LanguageManagment.Translate("success")!</strong> @ViewBag.SuccessMessage
+                            </div>
+                        }
+                        @if (!string.IsNullOrEmpty(ViewBag.InfoMessage))
+                         {
+                            <div class="alert alert-info">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <strong>@TokenShop.Common.LanguageManagment.Translate("attention")!</strong> @ViewBag.InfoMessage
+                            </div>
+                        }
+                        @if (!string.IsNullOrEmpty(ViewBag.WarningMessage))
+                        {
+                            <div class="alert alert-warning">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <strong>@TokenShop.Common.LanguageManagment.Translate("warning")!</strong> @ViewBag.WarningMessage
+                            </div>
+                        }
+                        @if (!string.IsNullOrEmpty(ViewBag.DangerMessage))
+                        {
+                            <div class="alert alert-danger alert-mg-b">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <strong>@TokenShop.Common.LanguageManagment.Translate("error")!</strong> @ViewBag.DangerMessage
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            @RenderBody()
+        </div>
+    </div>
+    </div>
+
+    <!-- jquery
+        ============================================ -->
+    <!-- bootstrap JS
+        ============================================ -->
+    <script src="/content/profile/js/bootstrap.min.js"></script>
+    <!-- meanmenu JS
+        ============================================ -->
+    <script src="/content/profile/js/jquery.meanmenu.js"></script>
+    <!-- mCustomScrollbar JS
+        ============================================ -->
+    <script src="/content/profile/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- sticky JS
+        ============================================ -->
+    <script src="/content/profile/js/jquery.sticky.js"></script>
+    <!-- scrollUp JS
+        ============================================ -->
+    <script src="/content/profile/js/jquery.scrollUp.min.js"></script>
+    <!-- scrollUp JS
+        ============================================ -->
+    <script src="/content/profile/js/wow/wow.min.js"></script>
+    <!-- counterup JS
+        ============================================ -->
+    <script src="/content/profile/js/counterup/jquery.counterup.min.js"></script>
+    <script src="/content/profile/js/counterup/waypoints.min.js"></script>
+    <script src="/content/profile/js/counterup/counterup-active.js"></script>
+    <!-- jvectormap JS
+        ============================================ -->
+    <script src="/content/profile/js/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="/content/profile/js/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/content/profile/js/jvectormap/jvectormap-active.js"></script>
+    <!-- peity JS
+        ============================================ -->
+    <script src="/content/profile/js/peity/jquery.peity.min.js"></script>
+    <script src="/content/profile/js/peity/peity-active.js"></script>
+    <!-- sparkline JS
+        ============================================ -->
+    <script src="/content/profile/js/sparkline/jquery.sparkline.min.js"></script>
+    <script src="/content/profile/js/sparkline/sparkline-active.js"></script>
+    <!-- flot JS
+        ============================================ -->
+    <script src="/content/profile/js/flot/Chart.min.js"></script>
+    <script src="/content/profile/js/flot/dashtwo-flot-active.js"></script>
+    <!-- data table JS
+        ============================================ -->
+    
+    <script>
+
+        var BootstrapTable = function (el, options) {
+            this.options = options;
+            this.$el = $(el);
+            this.$el_ = this.$el.clone();
+            this.timeoutId_ = 0;
+            this.timeoutFooter_ = 0;
+
+            this.init();
+        };
+        BootstrapTable.LOCALES = {};
+
+        BootstrapTable.LOCALES['en-US'] = BootstrapTable.LOCALES.en = {
+            formatLoadingMessage: function () {
+                return 'لطفا کمی صبر کنید';
+            },
+            formatRecordsPerPage: function (pageNumber) {
+                return sprintf('%s @TokenShop.Common.LanguageManagment.Translate("row_per_page")', pageNumber);
+            },
+            formatShowingRows: function (pageFrom, pageTo, totalRows) {
+                return sprintf('Showing %s to %s of %s rows', pageFrom, pageTo, totalRows);
+            },
+            formatDetailPagination: function (totalRows) {
+                return sprintf('Showing %s rows', totalRows);
+            },
+            formatSearch: function () {
+                return '@TokenShop.Common.LanguageManagment.Translate("search")';
+            },
+            formatNoMatches: function () {
+                return '@TokenShop.Common.LanguageManagment.Translate("no_found")';
+            },
+            formatPaginationSwitch: function () {
+                return 'Hide/Show pagination';
+            },
+            formatRefresh: function () {
+                return '@TokenShop.Common.LanguageManagment.Translate("refresh")';
+            },
+            formatToggle: function () {
+                return 'Toggle';
+            },
+            formatColumns: function () {
+                return 'Columns';
+            },
+            formatAllRows: function () {
+                return '@TokenShop.Common.LanguageManagment.Translate("all")';
+            }
+        };
+    </script>
+    <script src="/content/profile/js/data-table/bootstrap-table.js"></script>
+    <script src="/content/profile/js/data-table/tableExport.js"></script>
+    <script src="/content/profile/js/data-table/data-table-active.js"></script>
+    <script src="/content/profile/js/data-table/bootstrap-table-editable.js"></script>
+    <script src="/content/profile/js/data-table/bootstrap-editable.js"></script>
+    <script src="/content/profile/js/data-table/bootstrap-table-resizable.js"></script>
+    <script src="/content/profile/js/data-table/colResizable-1.5.source.js"></script>
+    <script src="/content/profile/js/data-table/bootstrap-table-export.js"></script>
+    <!-- main JS
+        ============================================ -->
+    <script src="/content/profile/js/main.js"></script>
+    <link rel="stylesheet" href="/content/profile/css/persian-datepicker.min.css" />
+    <script src="/content/profile/js/persian-date.min.js"></script>
+    <script src="/content/profile/js/persian-datepicker.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+﻿@model TokenShop.Models.Post
+@{
+    Layout = "~/Views/Shared/_layout.cshtml";
+}
+<main class="page blog-post">
+    <section class="clean-block clean-post dark">
+        <div class="container">
+            <div class="block-content">
+                @if (!string.IsNullOrEmpty(Model.Cover))
+                {
+                <div class="post-image" style="background-image:url(/media/cover/@Model.Cover);"></div>
+                }
+                <div class="post-body">
+                    <h3>@Model.Subject</h3>
+                    <div class="post-info"><span>توسط مدیر سایت</span><span>@Model.ModifyDatePersian</span></div>
+                    @Model.PostContent
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

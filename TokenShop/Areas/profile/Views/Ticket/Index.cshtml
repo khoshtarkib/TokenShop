@@ -1,0 +1,56 @@
+﻿@model System.Collections.Generic.List<TokenShop.Models.Ticket>
+@{
+    Layout = "~/Areas/profile/Views/Shared/_layout.cshtml";
+}
+<div class="inbox-mailbox-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="tab-content">
+                            <div id="inbox" class="tab-pane fade in animated zoomInDown custom-inbox-message shadow-reset active">
+                                <div class="mail-title inbox-bt-mg">
+                                    <h2 class="right">@TokenShop.Common.LanguageManagment.Translate("tickets")</h2>
+                                     <a class="btn btn-success left" href="/@TokenShop.Common.LanguageManagment.lang/profile/ticket/new"><i class="fa fa-reply"></i> @TokenShop.Common.LanguageManagment.Translate("new_record")</a>
+                                </div>
+                                <div class="datatable-dashv1-list custom-datatable-overright">
+                                    <div id="toolbar">
+                                    </div>
+                                    <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="false" data-show-refresh="false" data-key-events="true" data-show-toggle="false" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                        <thead>
+                                            <tr>
+                                                <th data-field="state" data-checkbox="true"></th>
+                                                <th data-field="id">@TokenShop.Common.LanguageManagment.Translate("id")</th>
+                                                <th data-field="subject">@TokenShop.Common.LanguageManagment.Translate("subject")</th>
+                                                <th data-field="date">@TokenShop.Common.LanguageManagment.Translate("date")</th>
+                                                <th data-field="periority">@TokenShop.Common.LanguageManagment.Translate("peririty")</th>
+                                                <th data-field="status">@TokenShop.Common.LanguageManagment.Translate("status")</th>
+                                                <th data-field=""></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @for (int i = 0; i < Model.Count; i++)
+                                            {
+                                                <tr class="new-email">
+                                                    <td></td>
+                                                    <td>@Model[i].Id</td>
+                                                    <td><a href="/profile/ticket/display/@Model[i].Id">@Model[i].Subject</a></td>
+                                                    <td>@Model[i].StatusDatePersian</td>
+                                                    <td>@Model[i].getPeriority()</td>
+                                                    <td>@Model[i].getStatus()</td>
+                                                    <td><a href="/@TokenShop.Common.LanguageManagment.lang/profile/ticket/display/@Model[i].Id" class="btn btn-info">@TokenShop.Common.LanguageManagment.Translate("view") <i class="fa fa-eye"></i></a></td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

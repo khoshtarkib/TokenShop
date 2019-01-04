@@ -1,0 +1,236 @@
+﻿@model TokenShop.Models.PayRequest
+@{
+    Layout = "~/Areas/admin/Views/Shared/_layout.cshtml";
+}
+@using (Html.BeginForm("View", "PayRequest", FormMethod.Post))
+{
+    <input type="hidden" name="bankId" value="@Model.Id" />
+    <div class="inbox-mailbox-area mg-b-15">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="tab-content">
+
+                                <div id="composemail" class="tab-pane fade in animated zoomInDown custom-inbox-message shadow-reset active">
+                                    <div class="view-mail-wrap">
+                                        <div class="mail-title">
+                                            <h2>درخواست برداشت وجه کاربر</h2>
+                                        </div>
+                                        
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="row">
+                                                    <div class="col-lg-4 right">
+                                                        <div class="compose-email-to">
+                                                            <span>نام و نام خانوادگی مشتری</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-8 right">
+                                                        <div class="compose-multiple-email">
+                                                            <input type="text" id="CustomerName" disabled value="@Model.CustomerName" name="CustomerName" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 right">
+                                                            <div class="compose-email-to">
+                                                                <span>شماره حساب</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-8 right">
+                                                            <div class="compose-multiple-email">
+                                                                <input type="text" id="number" disabled value="@Model.AccountNumber" name="number" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-3">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 right">
+                                                            <div class="compose-email-to">
+                                                                <span>شماره کارت</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-8 right">
+                                                            <div class="compose-multiple-email">
+                                                                <input type="text" id="cart" disabled name="cart" value="@Model.CartNumber" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-4">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 right">
+                                                            <div class="compose-email-to">
+                                                                <span>شماره شبا</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-8 right">
+                                                            <div class="compose-multiple-email">
+                                                                <input type="text" id="sheba" disabled name="sheba" value="@Model.Sheba" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-2">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 right">
+                                                            <div class="compose-email-to compose-subject-title">
+                                                                <span>بانک :</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-8 right">
+                                                            <div class="compose-multiple-email compose-subject-email">
+                                                                <select disabled name="bank" class="form-control">
+                                                                    @if (Model.BankId == 1)
+                                                                    {
+                                                                        <option value="1">ملی</option>
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <option value="1" selected>ملی</option>
+                                                                    }
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 right">
+                                                            <div class="compose-email-to">
+                                                                <span>تعداد</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-8 right">
+                                                            <div class="compose-multiple-email">
+                                                                <input type="text" id="Count" disabled value="@Model.Count" name="Count" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-3">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 right">
+                                                            <div class="compose-email-to">
+                                                                <span>سود</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-8 right">
+                                                            <div class="compose-multiple-email">
+                                                                <input type="text" id="IncomePrice" disabled name="IncomePrice" value="@Model.IncomePrice" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-3">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 right">
+                                                            <div class="compose-email-to">
+                                                                <span>درصد سود</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-8 right">
+                                                            <div class="compose-multiple-email">
+                                                                <input type="text" id="IncomePrice" disabled name="IncomePercent" value="@Model.IncomePercent" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-3">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 right">
+                                                            <div class="compose-email-to">
+                                                                <span>قابل پرداخت</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-8 right">
+                                                            <div class="compose-multiple-email">
+                                                                <input type="text" id="Amount" disabled name="Amount" value="@Model.Amount" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-lg-3">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 right">
+                                                            <div class="compose-email-to compose-subject-title">
+                                                                <span>وضعیت :</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-8 right">
+                                                            <div class="compose-multiple-email compose-subject-email">
+                                                                <select name="status" class="form-control">
+                                                                    @if (Model.Status == 1)
+                                                                    {
+                                                                        <option value="1" selected>در انتظار بررسی</option>
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <option value="1">در انتظار بررسی</option>
+                                                                    }
+                                                                    @if (Model.Status == 2)
+                                                                    {
+                                                                        <option value="2" selected>واریز شد</option>
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <option value="2">واریز شد</option>
+                                                                    }
+                                                                    @if (Model.Status == 3)
+                                                                    {
+                                                                        <option value="3" selected>مورد تایید نمی باشد</option>
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <option value="3">مورد تایید نمی باشد</option>
+                                                                    }
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="view-mail-reply-list">
+                                                        <ul class="view-mail-forword">
+                                                            <li class="left">
+                                                                <button type="submit" class="btn btn-success"><i class="fa fa-reply"></i> ثبت</button>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

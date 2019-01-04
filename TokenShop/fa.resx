@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="account_number" xml:space="preserve">
+    <value>شماره حساب</value>
+  </data>
+  <data name="address" xml:space="preserve">
+    <value>آدرس</value>
+  </data>
+  <data name="amount" xml:space="preserve">
+    <value>مبلغ</value>
+  </data>
+  <data name="attachment" xml:space="preserve">
+    <value>فایل پیوست</value>
+  </data>
+  <data name="balance" xml:space="preserve">
+    <value>موجودی حساب</value>
+  </data>
+  <data name="bank" xml:space="preserve">
+    <value>بانک</value>
+  </data>
+  <data name="bank_accounts" xml:space="preserve">
+    <value>حساب/کارتهای بانکی</value>
+  </data>
+  <data name="bank_receiptions" xml:space="preserve">
+    <value>فیش های بانکی</value>
+  </data>
+  <data name="cart_number" xml:space="preserve">
+    <value>شماره کارت</value>
+  </data>
+  <data name="city" xml:space="preserve">
+    <value>شهر</value>
+  </data>
+  <data name="content" xml:space="preserve">
+    <value>متن</value>
+  </data>
+  <data name="date" xml:space="preserve">
+    <value>تاریخ</value>
+  </data>
+  <data name="decrease" xml:space="preserve">
+    <value>کاهش</value>
+  </data>
+  <data name="description" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="draft" xml:space="preserve">
+    <value>در انتظار تایید</value>
+  </data>
+  <data name="edit" xml:space="preserve">
+    <value>ویرایش</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>ایمیل</value>
+  </data>
+  <data name="first_name" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="id" xml:space="preserve">
+    <value>شناسه</value>
+  </data>
+  <data name="increase" xml:space="preserve">
+    <value>افزایش</value>
+  </data>
+  <data name="invalid" xml:space="preserve">
+    <value>نامعتبر</value>
+  </data>
+  <data name="last_name" xml:space="preserve">
+    <value>نام خانوادگی</value>
+  </data>
+  <data name="mobile" xml:space="preserve">
+    <value>موبایل</value>
+  </data>
+  <data name="national_code" xml:space="preserve">
+    <value>کدملی</value>
+  </data>
+  <data name="new_record" xml:space="preserve">
+    <value>ثبت آیتم جدید</value>
+  </data>
+  <data name="next_step" xml:space="preserve">
+    <value>مرحله بعد</value>
+  </data>
+  <data name="number" xml:space="preserve">
+    <value>شماره</value>
+  </data>
+  <data name="open_tickets" xml:space="preserve">
+    <value>تیکتهای باز</value>
+  </data>
+  <data name="password" xml:space="preserve">
+    <value>کلمه عبور</value>
+  </data>
+  <data name="pay_mode" xml:space="preserve">
+    <value>نحوه پرداخت</value>
+  </data>
+  <data name="periority" xml:space="preserve">
+    <value>اولویت</value>
+  </data>
+  <data name="phone" xml:space="preserve">
+    <value>شماره تماس</value>
+  </data>
+  <data name="pick_price" xml:space="preserve">
+    <value>برداشت وجه</value>
+  </data>
+  <data name="please_fill_field" xml:space="preserve">
+    <value>لطفا مقدار این فیلد را وارد نمایید</value>
+  </data>
+  <data name="profile" xml:space="preserve">
+    <value>حساب کاربری</value>
+  </data>
+  <data name="release_empty" xml:space="preserve">
+    <value>برای عدم تغییر در کلمه عبور این فیلد را خالی بگذارید</value>
+  </data>
+  <data name="resean" xml:space="preserve">
+    <value>جهت</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>ذخیره</value>
+  </data>
+  <data name="send" xml:space="preserve">
+    <value>ارسال</value>
+  </data>
+  <data name="send_replay" xml:space="preserve">
+    <value>ارسال پاسخ به این پیام</value>
+  </data>
+  <data name="sheba" xml:space="preserve">
+    <value>شماره شبا</value>
+  </data>
+  <data name="status" xml:space="preserve">
+    <value>وضعیت</value>
+  </data>
+  <data name="subject" xml:space="preserve">
+    <value>موضوع</value>
+  </data>
+  <data name="tickets" xml:space="preserve">
+    <value>پیام های پشتیبانی</value>
+  </data>
+  <data name="ticket_send" xml:space="preserve">
+    <value>ارسال درخواست پشتیبانی</value>
+  </data>
+  <data name="token_buy_request" xml:space="preserve">
+    <value>درخواست خرید توکن</value>
+  </data>
+  <data name="token_buy_request_success" xml:space="preserve">
+    <value>درخواست شما با موفقیت ثبت گردید، بعد از تایید اطلاعات فیش واریزی توکنهای درخواستی به حساب شما منظور خواهد شد</value>
+  </data>
+  <data name="token_count" xml:space="preserve">
+    <value>تعداد توکن</value>
+  </data>
+  <data name="token_transactions" xml:space="preserve">
+    <value>گردش حساب توکن ها</value>
+  </data>
+  <data name="token_transfer" xml:space="preserve">
+    <value>انتقال توکن</value>
+  </data>
+  <data name="token_transfer_reciption_id" xml:space="preserve">
+    <value>شناسه گیرنده توکن</value>
+  </data>
+  <data name="token_transfer_reciption_name" xml:space="preserve">
+    <value>نام گیرنده توکن</value>
+  </data>
+  <data name="token_transfer_success" xml:space="preserve">
+    <value>درخواست انتقال توکن شما با موفقیت انجام شد</value>
+  </data>
+  <data name="transfer" xml:space="preserve">
+    <value>انتقال</value>
+  </data>
+  <data name="type" xml:space="preserve">
+    <value>عملکرد</value>
+  </data>
+  <data name="urgent" xml:space="preserve">
+    <value>فوری</value>
+  </data>
+  <data name="username" xml:space="preserve">
+    <value>نام کاربری</value>
+  </data>
+  <data name="valid" xml:space="preserve">
+    <value>تایید شده</value>
+  </data>
+  <data name="view" xml:space="preserve">
+    <value>مشاهده</value>
+  </data>
+  <data name="website" xml:space="preserve">
+    <value>وبسایت</value>
+  </data>
+  <data name="about_us" xml:space="preserve">
+    <value>درباره ما</value>
+  </data>
+  <data name="attention" xml:space="preserve">
+    <value>توجه</value>
+  </data>
+  <data name="contact_us" xml:space="preserve">
+    <value>تماس با ما</value>
+  </data>
+  <data name="copyright" xml:space="preserve">
+    <value>© 2018 کلیه حقوق برای dgbt محفوظ هست</value>
+  </data>
+  <data name="dashboard" xml:space="preserve">
+    <value>داشبرد</value>
+  </data>
+  <data name="deposit_date" xml:space="preserve">
+    <value>تاریخ واریز</value>
+  </data>
+  <data name="error" xml:space="preserve">
+    <value>خطا</value>
+  </data>
+  <data name="faq" xml:space="preserve">
+    <value>سوالات متداول</value>
+  </data>
+  <data name="home" xml:space="preserve">
+    <value>صفحه اصلی</value>
+  </data>
+  <data name="menu" xml:space="preserve">
+    <value>منو</value>
+  </data>
+  <data name="news" xml:space="preserve">
+    <value>اخبار</value>
+  </data>
+  <data name="new_request" xml:space="preserve">
+    <value>درخواست جدید</value>
+  </data>
+  <data name="profile_me" xml:space="preserve">
+    <value>حساب کاربری من</value>
+  </data>
+  <data name="remember_me" xml:space="preserve">
+    <value>رمز عبور خود را فراموش کرده اید؟</value>
+  </data>
+  <data name="repassword" xml:space="preserve">
+    <value>تکرار کلمه عبور</value>
+  </data>
+  <data name="request_date" xml:space="preserve">
+    <value>تاریخ درخواست</value>
+  </data>
+  <data name="return_price" xml:space="preserve">
+    <value>عودت وجه</value>
+  </data>
+  <data name="signout" xml:space="preserve">
+    <value>خروج</value>
+  </data>
+  <data name="sign_in" xml:space="preserve">
+    <value>ورود</value>
+  </data>
+  <data name="sign_up" xml:space="preserve">
+    <value>ثبت نام</value>
+  </data>
+  <data name="success" xml:space="preserve">
+    <value>تبریک</value>
+  </data>
+  <data name="token_buy" xml:space="preserve">
+    <value>خرید توکن</value>
+  </data>
+  <data name="warning" xml:space="preserve">
+    <value>هشدار</value>
+  </data>
+  <data name="welcome" xml:space="preserve">
+    <value>خوش آمدید</value>
+  </data>
+  <data name="all" xml:space="preserve">
+    <value>همه</value>
+  </data>
+  <data name="no_found" xml:space="preserve">
+    <value>نتیجه ای یافت نشد</value>
+  </data>
+  <data name="refresh" xml:space="preserve">
+    <value>بروزرسانی</value>
+  </data>
+  <data name="row_per_page" xml:space="preserve">
+    <value>تعداد ردیف در هر صفحه</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>جستجو</value>
+  </data>
+</root>

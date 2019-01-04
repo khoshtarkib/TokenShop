@@ -1,0 +1,122 @@
+﻿
+@{
+    Layout = "~/Areas/profile/Views/Shared/_layout.cshtml";
+}
+
+  <!-- income order visit user Start -->
+<div class="income-order-visit-user-area">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="income-dashone-total income-monthly shadow-reset nt-mg-b-30">
+                    <div class="income-title">
+                        <div class="main-income-head">
+                            <h2>@TokenShop.Common.LanguageManagment.Translate("tickets")</h2>
+                            <div class="main-income-phara order-cl">
+                                <p><a href="/@TokenShop.Common.LanguageManagment.lang/profile/ticket">@TokenShop.Common.LanguageManagment.Translate("view")</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="income-dashone-pro">
+                        <div class="income-rate-total">
+                            <div class="price-adminpro-rate">
+                                <h3><span class="counter">@ViewBag.TicketCount </span></h3>
+                            </div>
+                            <div class="price-graph">
+                                <span id="sparkline1"></span>
+                            </div>
+                        </div>
+                        <div class="income-range">
+                            <p>@TokenShop.Common.LanguageManagment.Translate("open_tickets")</p>
+                            <span class="income-percentange">@ViewBag.OpenTicketCount</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="income-dashone-total orders-monthly shadow-reset nt-mg-b-30">
+                    <div class="income-title">
+                        <div class="main-income-head">
+                            <h2>@TokenShop.Common.LanguageManagment.Translate("increase")</h2>
+                            <div class="main-income-phara order-cl">
+                                <p><a href="/@TokenShop.Common.LanguageManagment.lang/profile/token/transaction/1">@TokenShop.Common.LanguageManagment.Translate("view")</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="income-dashone-pro">
+                        <div class="income-rate-total">
+                            <div class="price-adminpro-rate">
+                                <h3><span class="counter">@ViewBag.token_price_in</span></h3>
+                            </div>
+                            <div class="price-graph">
+                                <span id="sparkline6"></span>
+                            </div>
+                        </div>
+                        <div class="income-range order-cl">
+                            <p>@TokenShop.Common.LanguageManagment.Translate("token_count")</p>
+                            <span class="income-percentange">@ViewBag.token_count_in</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="income-dashone-total visitor-monthly shadow-reset nt-mg-b-30">
+                    <div class="income-title">
+                        <div class="main-income-head">
+                            <h2>@TokenShop.Common.LanguageManagment.Translate("decrease")</h2>
+                            <div class="main-income-phara visitor-cl">
+                                <p><a href="/@TokenShop.Common.LanguageManagment.lang/profile/token/transaction/2">@TokenShop.Common.LanguageManagment.Translate("view")</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="income-dashone-pro">
+                        <div class="income-rate-total">
+                            <div class="price-adminpro-rate">
+                                <h3><span class="counter">@ViewBag.token_price_out</span></h3>
+                            </div>
+                            <div class="price-graph">
+                                <span id="sparkline2"></span>
+                            </div>
+                        </div>
+                        <div class="income-range visitor-cl">
+                            <p>@TokenShop.Common.LanguageManagment.Translate("token_count")</p>
+                            <span class="income-percentange">@ViewBag.token_count_out</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="income-dashone-total user-monthly shadow-reset nt-mg-b-30">
+                    <div class="income-title">
+                        <div class="main-income-head">
+                            <h2>@TokenShop.Common.LanguageManagment.Translate("balance")</h2>
+                            <div class="main-income-phara low-value-cl">
+                                <p><a href="/@TokenShop.Common.LanguageManagment.lang/profile/token/transaction">@TokenShop.Common.LanguageManagment.Translate("view")</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="income-dashone-pro">
+                        <div class="income-rate-total">
+                            <div class="price-adminpro-rate">
+                                <h3><span class="counter">@ViewBag.token_price</span></h3>
+                            </div>
+                            <div class="price-graph">
+                                <span id="sparkline5"></span>
+                            </div>
+                        </div>
+                        <div class="income-range low-value-cl">
+                            <p>@TokenShop.Common.LanguageManagment.Translate("token_count")</p>
+                            <span class="income-percentange">@ViewBag.token_count</span>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- income order visit user End -->
+

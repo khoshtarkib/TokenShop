@@ -1,0 +1,102 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="/content/front/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
+    <link rel="stylesheet" href="/content/front/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="/content/front/css/coin.css">
+    <link rel="icon" href="/favicon.ico">
+    @if (TokenShop.Common.LanguageManagment.lang == "en")
+    {
+    <style>
+        .page-footer ul li:after, .page-footer ul li:before{left:0 !important;}
+        .page-footer.dark h5{text-align:left !important;}
+        .page-footer a{text-align:left !important;}
+        .ml-auto, .mx-auto {
+            margin-right: auto !important;
+            margin-left: 0 !important;
+        }
+        body{direction:ltr !important;}
+        .form-group label{float:left !important;}
+    </style>
+    }
+</head>
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container">
+            <a class="navbar-brand logo" href="#"><img src="~/content/front/img/logo.jpeg" style="width: 50px;" /></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse"
+                 id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="/@TokenShop.Common.LanguageManagment.lang/">@TokenShop.Common.LanguageManagment.Translate("home")</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/@TokenShop.Common.LanguageManagment.lang/faq">@TokenShop.Common.LanguageManagment.Translate("faq")</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/@TokenShop.Common.LanguageManagment.lang/post">@TokenShop.Common.LanguageManagment.Translate("news")</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/@TokenShop.Common.LanguageManagment.lang/aboutus">@TokenShop.Common.LanguageManagment.Translate("about_us")</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/@TokenShop.Common.LanguageManagment.lang/contactus">@TokenShop.Common.LanguageManagment.Translate("contact_us")</a></li>
+                    @if (Session["customer_id"] == null)
+                    {
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/@TokenShop.Common.LanguageManagment.lang/signin">@TokenShop.Common.LanguageManagment.Translate("sign_in")</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/@TokenShop.Common.LanguageManagment.lang/signup">@TokenShop.Common.LanguageManagment.Translate("sign_up")</a></li>
+                    }
+                    else
+                    {
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="/@TokenShop.Common.LanguageManagment.lang/profile">@Session["customer_fullname"] ،@TokenShop.Common.LanguageManagment.Translate("welcome")</a></li>   
+                    }
+                </ul>
+                <div><a href="/fa/">فارسی</a> | <a href="/en/">English</a></div>
+            </div>
+        </div>
+    </nav>
+    @RenderBody()
+    <footer class="page-footer dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h5>@TokenShop.Common.LanguageManagment.Translate("menu")</h5>
+                    <ul>
+                        <li><a href="#">@TokenShop.Common.LanguageManagment.Translate("menu")</a></li>
+                        <li><a href="#">@TokenShop.Common.LanguageManagment.Translate("menu")</a></li>
+                        <li><a href="#">@TokenShop.Common.LanguageManagment.Translate("menu")</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>@TokenShop.Common.LanguageManagment.Translate("menu")</h5>
+                    <ul>
+                        <li><a href="#">@TokenShop.Common.LanguageManagment.Translate("menu")</a></li>
+                        <li><a href="#">@TokenShop.Common.LanguageManagment.Translate("menu")</a></li>
+                        <li><a href="#">@TokenShop.Common.LanguageManagment.Translate("menu")</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <h5>@TokenShop.Common.LanguageManagment.Translate("menu")</h5>
+                    <ul>
+                        <li><a href="#">@TokenShop.Common.LanguageManagment.Translate("menu")</a></li>
+                        <li><a href="#">@TokenShop.Common.LanguageManagment.Translate("menu")</a></li>
+                        <li><a href="#">@TokenShop.Common.LanguageManagment.Translate("menu")</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <audio controls autoplay loop>
+                        <source src="~/content/front/music/1.mp3" type="audio/mp3">
+                        مرورگر شما از پلیر موسیقی پشتیبانی نمیکند
+                    </audio>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>@TokenShop.Common.LanguageManagment.Translate("copyright")</p>
+        </div>
+    </footer>
+    <script src="/content/front/js/jquery.min.js"></script>
+    <script src="/content/front/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/content/front/js/theme.js"></script>
+    <script src="/content/front/js/particles.min.js"></script>
+</body>
+</html>

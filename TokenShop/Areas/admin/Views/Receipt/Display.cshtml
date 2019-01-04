@@ -1,0 +1,156 @@
+﻿@model TokenShop.Models.BankReceipt
+@{
+    ViewBag.Title = "Display";
+    Layout = "~/Areas/admin/Views/Shared/_layout.cshtml";
+}
+
+@using (Html.BeginForm("Display", "Receipt", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="hidden" id="customerId" name="receiptId" value="@Model.Id" />
+    <div class="multi-uploaded-area inbox-mailbox-area mg-b-15">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="project-details-wrap shadow-reset">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="project-details-title">
+                                            <h2>@TokenShop.Common.LanguageManagment.Translate("bank_receiptions")</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>@TokenShop.Common.LanguageManagment.Translate("number"):</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <input type="text" id="firstName" value="@Model.ReceiptNumber" name="receiptNumber" class="form-control" required oninvalid="setCustomValidity('لطفا مقدار این فیلد را وارد نمایید')" oninput="setCustomValidity('')">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>@TokenShop.Common.LanguageManagment.Translate("resean"):</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <p>@Model.ReciptTypeText</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>@TokenShop.Common.LanguageManagment.Translate("attachment"):</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <p><a href="~/media/receipt/@Model.Attachment" target="_blank">@TokenShop.Common.LanguageManagment.Translate("view")</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>@TokenShop.Common.LanguageManagment.Translate("status"):</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+
+                                                        <select name="status" class="form-control">
+                                                            @if (Model.Statuse == 1)
+                                                            {
+                                                                <option value="1" selected>@TokenShop.Common.LanguageManagment.Translate("draft")</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option value="1">@TokenShop.Common.LanguageManagment.Translate("draft")</option>
+                                                            }
+                                                            @if (Model.Statuse == 2)
+                                                            {
+                                                                <option value="2" selected>@TokenShop.Common.LanguageManagment.Translate("valid")</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option value="2">@TokenShop.Common.LanguageManagment.Translate("valid")</option>
+                                                            }
+                                                            @if (Model.Statuse == 3)
+                                                            {
+                                                                <option value="3" selected>@TokenShop.Common.LanguageManagment.Translate("invalid")</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option value="3">@TokenShop.Common.LanguageManagment.Translate("invalid")</option>
+                                                            }
+                                                        </select>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>@TokenShop.Common.LanguageManagment.Translate("amount"):</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <p>@Model.Amount</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="project-details-mg">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <div class="project-details-st">
+                                                        <span><strong>@TokenShop.Common.LanguageManagment.Translate("token_count"):</strong></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                                    <div class="btn-group project-list-ad">
+                                                        <p>@ViewBag.Count</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <button type="submit" class="btn btn-success">@TokenShop.Common.LanguageManagment.Translate("save")</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,369 @@
+﻿@{
+    Layout = null;
+}
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i,800" rel="stylesheet">
+    <link rel="stylesheet" href="/content/admin/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/content/admin/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/content/admin/css/adminpro-custon-icon.css">
+    <link rel="stylesheet" href="/content/admin/css/meanmenu.min.css">
+    <link rel="stylesheet" href="/content/admin/css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="/content/admin/css/animate.css">
+    <link rel="stylesheet" href="/content/admin/css/jvectormap/jquery-jvectormap-2.0.3.css">
+    <link rel="stylesheet" href="/content/admin/css/data-table/bootstrap-table.css">
+    <link rel="stylesheet" href="/content/admin/css/data-table/bootstrap-editable.css">
+    <link rel="stylesheet" href="/content/admin/css/normalize.css">
+    <link rel="stylesheet" href="/content/admin/css/c3.min.css">
+    <link rel="stylesheet" href="/content/admin/css/form.css">
+    <link rel="stylesheet" href="/content/admin/style.css">
+    <link rel="stylesheet" href="/content/admin/css/responsive.css">
+    
+</head>
+<body class="materialdesign">
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- Header top area start-->
+    <div class="wrapper-pro">
+        <!-- Header top area start-->
+        <div class="content-inner-all">
+            <div class="header-top-area">
+                <div class="fixed-header-top">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-7 col-md-1 col-sm-1 col-xs-12 right">
+                                <div class="header-top-menu tabl-d-n">
+                                    <ul class="nav navbar-nav mai-top-nav">
+
+                                        <li>
+                                            <a href="/@TokenShop.Common.LanguageManagment.lang/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-home"></i> <span class="mini-dn">صفحه اصلی</span></a>
+                                        </li>
+                                        <li >
+                                            <a href="/admin/home" class="nav-link dropdown-toggle"><i class="fa big-icon fa-home"></i> <span class="mini-dn">داشبرد</span></a>
+                                        </li>
+
+                                        <li class="nav-item dropdown">
+                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">امور مشتریان <span class="angle-down-topmenu"><i class="fa fa-angle-down"></i></span></a>
+                                            <div role="menu" class="dropdown-menu animated flipInX">
+                                                @if (((string)ViewBag.permissions).Contains("[customers]") || ViewBag.stat == 10)
+                                                {
+                                                <a href="/admin/customers/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-users"></i> <span class="mini-dn">مشتریان</span></a>
+                                                }
+                                                @if (((string)ViewBag.permissions).Contains("[receipt]") || ViewBag.stat == 10)
+                                                {
+                                                <a href="/admin/receipt/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-users"></i> <span class="mini-dn">فیشهای بانکی</span></a>
+                                                }
+                                                @if (((string)ViewBag.permissions).Contains("[cart]") || ViewBag.stat == 10)
+                                                {
+                                                <a href="/admin/cart/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-bank"></i> <span class="mini-dn">کارتهای بانکی</span></a>
+                                                }
+                                                @if (((string)ViewBag.permissions).Contains("[ticket]") || ViewBag.stat == 10)
+                                                {
+                                                <a href="/admin/ticket" class="nav-link dropdown-toggle"><i class="fa big-icon fa-envelope"></i> <span class="mini-dn">تیکتها</span></a>
+                                                }
+                                                @if (((string)ViewBag.permissions).Contains("[order]") || ViewBag.stat == 10)
+                                                {
+                                                <a href="/admin/orders" class="nav-link dropdown-toggle"><i class="fa big-icon fa-exchange"></i> <span class="mini-dn">درخواست های خرید</span></a>
+                                                }
+                                                @if (((string)ViewBag.permissions).Contains("[payrequest]") || ViewBag.stat == 10)
+                                                {
+                                                <a href="/admin/payrequest/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-exchange"></i> <span class="mini-dn">درخواست های واریز</span></a>
+                                                }
+                                            </div>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">مدیریت محتوا <span class="angle-down-topmenu"><i class="fa fa-angle-down"></i></span></a>
+                                            <div role="menu" class="dropdown-menu animated flipInX">
+                                                @if (((string)ViewBag.permissions).Contains("[news]") || ViewBag.stat == 10)
+                                                {
+                                                <a href="/admin/news/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-list"></i> <span class="mini-dn">خبرها</span></a>
+                                                }
+                                                @if (((string)ViewBag.permissions).Contains("[faq]") || ViewBag.stat == 10)
+                                                {
+                                                <a href="/admin/questions/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-list"></i> <span class="mini-dn">سوالات متداول</span></a>
+                                                }
+                                                @if (((string)ViewBag.permissions).Contains("[slider]") || ViewBag.stat == 10)
+                                                {
+                                                <a href="/admin/slider/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-list"></i> <span class="mini-dn">اسلایدر</span></a>
+                                                }
+                                            </div>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">گزارشات <span class="angle-down-topmenu"><i class="fa fa-angle-down"></i></span></a>
+                                            <div role="menu" class="dropdown-menu animated flipInX">
+                                                @if (((string)ViewBag.permissions).Contains("[concatus]") || ViewBag.stat == 10)
+                                                {
+                                                <a href="/admin/contactus/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-phone"></i> <span class="mini-dn">درخواستهای تماس</span></a>
+                                                }
+                                                @if (((string)ViewBag.permissions).Contains("[transactions]") || ViewBag.stat == 10)
+                                                {
+                                                <a href="/admin/transactions/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-exchange"></i> <span class="mini-dn">تراکنش های بانکی</span></a>
+                                                }
+                                                @if (((string)ViewBag.permissions).Contains("[logs]") || ViewBag.stat == 10)
+                                                {
+                                                <a href="/admin/logs/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-warning"></i> <span class="mini-dn">لاگ های سیستم</span></a>
+                                                }
+                                            </div>
+                                        </li>
+                                        @if (((string)ViewBag.permissions).Contains("[settings]") || ViewBag.stat == 10)
+                                        {
+                                        <li >
+                                            <a href="/admin/users/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-users"></i> <span class="mini-dn">کاربران</span></a>
+                                        </li>
+                                        }
+                                        @if (((string)ViewBag.permissions).Contains("[users]") || ViewBag.stat == 10)
+                                        {
+                                        <li >
+                                            <a href="/admin/setting/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-cog"></i> <span class="mini-dn">تنظیمات</span></a>
+                                        </li>
+                                        }
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 right">
+                                <div class="header-right-info">
+                                    <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                        <li >
+                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                                <span class="adminpro-icon adminpro-user-rounded header-riht-inf"></span>
+                                                <span class="admin-name">@ViewBag.UserFullName</span>
+                                                <span class="author-project-icon adminpro-icon adminpro-down-arrow"></span>
+                                            </a>
+                                            <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated flipInX">
+                                                <li>
+                                                    <a href="/admin/users/my"><span class="adminpro-icon adminpro-user-rounded author-log-ic"></span>حساب کاربری من</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/admin/signout"><span class="adminpro-icon adminpro-locked author-log-ic"></span>خروج</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Header top area end-->
+            <!-- Breadcome start-->
+            <div class="breadcome-area mg-b-30 small-dn">
+            </div>
+            <!-- Breadcome End-->
+            <!-- Mobile Menu start -->
+
+            <div class="mobile-menu-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="mobile-menu">
+                                <nav id="dropdown">
+                                    <ul class="mobile-menu-nav">
+                                        <li>
+                                            <a href="/@TokenShop.Common.LanguageManagment.lang/" data-toggle="collapse">صفحه اصلی</a>
+                                        </li>
+                                        <li >
+                                            <a href="/admin/home" data-toggle="collapse">داشبرد</a>
+                                        </li>
+
+                                        <li class="nav-item dropdown">
+                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">امور مشتریان <span class="angle-down-topmenu"><i class="fa fa-angle-down"></i></span></a>
+                                            <div role="menu" class="dropdown-menu animated flipInX">
+                                                @if (((string)ViewBag.permissions).Contains("[customers]") || ViewBag.stat == 10)
+                                                {
+                                                    <a href="/admin/customers/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-users"></i> <span class="mini-dn">مشتریان</span></a>
+                                                }
+                                                @if (((string)ViewBag.permissions).Contains("[receipt]") || ViewBag.stat == 10)
+                                                {
+                                                    <a href="/admin/receipt/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-users"></i> <span class="mini-dn">فیشهای بانکی</span></a>
+                                                }
+                                                @if (((string)ViewBag.permissions).Contains("[cart]") || ViewBag.stat == 10)
+                                                {
+                                                    <a href="/admin/cart/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-bank"></i> <span class="mini-dn">کارتهای بانکی</span></a>
+                                                }
+                                                @if (((string)ViewBag.permissions).Contains("[ticket]") || ViewBag.stat == 10)
+                                                {
+                                                    <a href="/admin/ticket" class="nav-link dropdown-toggle"><i class="fa big-icon fa-envelope"></i> <span class="mini-dn">تیکتها</span></a>
+                                                }
+                                                @if (((string)ViewBag.permissions).Contains("[order]") || ViewBag.stat == 10)
+                                                {
+                                                    <a href="/admin/orders" class="nav-link dropdown-toggle"><i class="fa big-icon fa-exchange"></i> <span class="mini-dn">درخواست های خرید</span></a>
+                                                }
+                                                @if (((string)ViewBag.permissions).Contains("[payrequest]") || ViewBag.stat == 10)
+                                                {
+                                                    <a href="/admin/payrequest/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-exchange"></i> <span class="mini-dn">درخواست های واریز</span></a>
+                                                }
+                                            </div>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">مدیریت محتوا <span class="angle-down-topmenu"><i class="fa fa-angle-down"></i></span></a>
+                                            <div role="menu" class="dropdown-menu animated flipInX">
+                                                @if (((string)ViewBag.permissions).Contains("[news]") || ViewBag.stat == 10)
+                                                {
+                                                    <a href="/admin/news/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-list"></i> <span class="mini-dn">خبرها</span></a>
+                                                }
+                                                @if (((string)ViewBag.permissions).Contains("[faq]") || ViewBag.stat == 10)
+                                                {
+                                                    <a href="/admin/questions/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-list"></i> <span class="mini-dn">سوالات متداول</span></a>
+                                                }
+                                                @if (((string)ViewBag.permissions).Contains("[slider]") || ViewBag.stat == 10)
+                                                {
+                                                    <a href="/admin/slider/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-list"></i> <span class="mini-dn">اسلایدر</span></a>
+                                                }
+                                            </div>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">گزارشات <span class="angle-down-topmenu"><i class="fa fa-angle-down"></i></span></a>
+                                            <div role="menu" class="dropdown-menu animated flipInX">
+                                                @if (((string)ViewBag.permissions).Contains("[concatus]") || ViewBag.stat == 10)
+                                                {
+                                                    <a href="/admin/contactus/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-phone"></i> <span class="mini-dn">درخواستهای تماس</span></a>
+                                                }
+                                                @if (((string)ViewBag.permissions).Contains("[transactions]") || ViewBag.stat == 10)
+                                                {
+                                                    <a href="/admin/transactions/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-exchange"></i> <span class="mini-dn">تراکنش های بانکی</span></a>
+                                                }
+                                                @if (((string)ViewBag.permissions).Contains("[logs]") || ViewBag.stat == 10)
+                                                {
+                                                    <a href="/admin/logs/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-warning"></i> <span class="mini-dn">لاگ های سیستم</span></a>
+                                                }
+                                            </div>
+                                        </li>
+                                        @if (((string)ViewBag.permissions).Contains("[settings]") || ViewBag.stat == 10)
+                                        {
+                                            <li >
+                                                <a href="/admin/users/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-users"></i> <span class="mini-dn">کاربران</span></a>
+                                            </li>
+                                        }
+                                        @if (((string)ViewBag.permissions).Contains("[users]") || ViewBag.stat == 10)
+                                        {
+                                            <li >
+                                                <a href="/admin/setting/" class="nav-link dropdown-toggle"><i class="fa big-icon fa-cog"></i> <span class="mini-dn">تنظیمات</span></a>
+                                            </li>
+                                        }
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu end -->
+            <!-- Breadcome start-->
+            <div class="breadcome-area des-none mg-b-30">
+            </div>
+            <!-- Breadcome End-->
+
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        @if (!string.IsNullOrEmpty(ViewBag.SuccessMessage))
+                        {
+                            <div class="alert alert-success">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <strong>تبریک!</strong> @ViewBag.SuccessMessage
+                            </div>
+                        }
+                        @if (!string.IsNullOrEmpty(ViewBag.InfoMessage))
+                        {
+                            <div class="alert alert-info">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <strong>توجه!</strong> @ViewBag.InfoMessage
+                            </div>
+                        }
+                        @if (!string.IsNullOrEmpty(ViewBag.WarningMessage))
+                        {
+                            <div class="alert alert-warning">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <strong>هشدار!</strong> @ViewBag.WarningMessage
+                            </div>
+                        }
+                        @if (!string.IsNullOrEmpty(ViewBag.DangerMessage))
+                        {
+                            <div class="alert alert-danger alert-mg-b">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <strong>خطا!</strong> @ViewBag.DangerMessage
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            @RenderBody()
+        </div>
+    </div>
+    </div>
+    <script src="/content/admin/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="/content/admin/js/vendor/jquery-1.11.3.min.js"></script>
+    <script src="/content/admin/js/bootstrap.min.js"></script>
+    <!-- meanmenu JS
+        ============================================ -->
+    <script src="/content/admin/js/jquery.meanmenu.js"></script>
+    <!-- mCustomScrollbar JS
+        ============================================ -->
+    <script src="/content/admin/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- sticky JS
+        ============================================ -->
+    <script src="/content/admin/js/jquery.sticky.js"></script>
+    <!-- scrollUp JS
+        ============================================ -->
+    <script src="/content/admin/js/jquery.scrollUp.min.js"></script>
+    <!-- scrollUp JS
+        ============================================ -->
+    <script src="/content/admin/js/wow/wow.min.js"></script>
+    <!-- counterup JS
+        ============================================ -->
+    <script src="/content/admin/js/counterup/jquery.counterup.min.js"></script>
+    <script src="/content/admin/js/counterup/waypoints.min.js"></script>
+    <script src="/content/admin/js/counterup/counterup-active.js"></script>
+    <!-- jvectormap JS
+        ============================================ -->
+    <script src="/content/admin/js/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="/content/admin/js/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="/content/admin/js/jvectormap/jvectormap-active.js"></script>
+    <!-- peity JS
+        ============================================ -->
+    <script src="/content/admin/js/peity/jquery.peity.min.js"></script>
+    <script src="/content/admin/js/peity/peity-active.js"></script>
+    <!-- sparkline JS
+        ============================================ -->
+    <script src="/content/admin/js/sparkline/jquery.sparkline.min.js"></script>
+    <script src="/content/admin/js/sparkline/sparkline-active.js"></script>
+    <!-- flot JS
+        ============================================ -->
+    <script src="/content/admin/js/flot/Chart.min.js"></script>
+    <script src="/content/admin/js/flot/dashtwo-flot-active.js"></script>
+    <!-- data table JS
+        ============================================ -->
+    <script src="/content/admin/js/data-table/bootstrap-table.js"></script>
+    <script src="/content/admin/js/data-table/tableExport.js"></script>
+    <script src="/content/admin/js/data-table/data-table-active.js"></script>
+    <script src="/content/admin/js/data-table/bootstrap-table-editable.js"></script>
+    <script src="/content/admin/js/data-table/bootstrap-editable.js"></script>
+    <script src="/content/admin/js/data-table/bootstrap-table-resizable.js"></script>
+    <script src="/content/admin/js/data-table/colResizable-1.5.source.js"></script>
+    <script src="/content/admin/js/data-table/bootstrap-table-export.js"></script>
+    <!-- main JS
+        ============================================ -->
+
+    <script src="/content/admin/js/main.js"></script>
+</body>
+</html>

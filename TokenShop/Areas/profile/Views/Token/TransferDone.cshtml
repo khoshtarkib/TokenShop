@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = "~/Areas/profile/Views/Shared/_layout.cshtml";
+}
+<div class="login-form-area mg-t-30 mg-b-15 fade in animated zoomInDown">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            @using (Html.BeginForm("Transfer", "Token", FormMethod.Post, new { id = "adminpro-register-form", @class = "adminpro-form" }))
+            {
+                <div class="col-lg-6">
+                    <div class="login-bg">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="login-title">
+                                    <h1>@TokenShop.Common.LanguageManagment.Translate("token_transfer")</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p>@TokenShop.Common.LanguageManagment.Translate("token_transfer_success")</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            <div class="col-lg-3"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = "~/Views/shared/_layout.cshtml";
+}
+
+<main class="page registration-page">
+    <section class="clean-block clean-form dark">
+        <div class="container">
+            <div class="block-heading">
+            </div>
+            <form method="post" action="/@TokenShop.Common.LanguageManagment.lang/signup">
+                @if (!string.IsNullOrEmpty(ViewBag.message))
+                {
+                        <div class="form-group"><p>@ViewBag.message</p></div>
+                    }
+                    <div class="form-group"><label for="fname">@TokenShop.Common.LanguageManagment.Translate("first_name")</label><input class="form-control item" type="text" name="fname"></div>
+                    <div class="form-group"><label for="lname">@TokenShop.Common.LanguageManagment.Translate("last_name")</label><input class="form-control item" type="text" name="lname"></div>
+                    <div class="form-group"><label for="email">@TokenShop.Common.LanguageManagment.Translate("email") - @TokenShop.Common.LanguageManagment.Translate("username")</label><input class="form-control item" type="text" name="email"></div>
+                    <div class="form-group"><label for="password">@TokenShop.Common.LanguageManagment.Translate("password")</label><input class="form-control item" type="password" name="password"></div>
+                    <div class="form-group"><label for="re_password">@TokenShop.Common.LanguageManagment.Translate("repassword")</label><input class="form-control item" type="password" name="re_password"></div>
+                    <button class="btn btn-primary btn-block" type="submit">@TokenShop.Common.LanguageManagment.Translate("sign_up")</button>
+                </form>
+</div>
+    </section>
+</main>

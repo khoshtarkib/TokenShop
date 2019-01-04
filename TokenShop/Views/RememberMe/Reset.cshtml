@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "~/Views/shared/_layout.cshtml";
+}
+<main class="page login-page">
+    <section class="clean-block clean-form dark">
+        <div class="container">
+            <div class="block-heading">
+                <h2 class="text-info">تغییر گذرواژه</h2>
+            </div>
+            @if (ViewBag.change)
+            {
+                <p>کلمه عبور شما با موفقیت تغییر یافت،جهت ورود به حساب کاربری خود <a href="/sigin">کلیک</a> نمایید</p>
+            }
+            else
+            {
+                using (Html.BeginForm("Index", "SignIn", FormMethod.Post))
+                {
+                    <input type="hidden" id="token" value="@ViewBag.token" />
+                    if (!string.IsNullOrEmpty(ViewBag.message))
+                    {
+                        <div class="form-group"><p>@ViewBag.message</p></div>
+                    }
+                    <div class="form-group"><label for="email">کلمه عبور جدید</label><input class="form-control item" type="password" name="password"></div>
+                    <div class="form-group"><label for="password">تکرار کلمه عبور</label><input class="form-control" type="password" name="rePassword"></div>
+                    <div class="form-group">
+                        <div class="form-check"><input class="form-check-input" type="checkbox" id="checkbox"><label class="form-check-label" for="checkbox">مرا به خاطر بسپار</label></div>
+                    </div><button class="btn btn-primary btn-block" type="submit">تغییر</button>
+                }
+            }
+        </div>
+    </section>
+</main>
